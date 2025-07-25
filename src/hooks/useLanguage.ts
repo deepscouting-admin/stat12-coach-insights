@@ -50,7 +50,24 @@ const translations = {
     contactEmail: 'Email',
     contactMessage: 'Message',
     contactSend: 'Envoyer',
-    contactCalendly: 'Planifier une démo'
+    contactCalendly: 'Planifier une démo',
+    
+    // Demo Dialog
+    demoButton: 'Demander une démo',
+    demoTitle: 'Réserver une démonstration',
+    demoSubmitted: 'Demande envoyée !',
+    demoSubmittedDescription: 'Nous vous recontacterons rapidement pour organiser votre démonstration.',
+    firstName: 'Prénom',
+    lastName: 'Nom',
+    email: 'Email',
+    club: 'Club',
+    message: 'Message',
+    firstNamePlaceholder: 'Votre prénom',
+    lastNamePlaceholder: 'Votre nom',
+    emailPlaceholder: 'votre.email@exemple.com',
+    clubPlaceholder: 'Nom de votre club',
+    messagePlaceholder: 'Décrivez vos besoins et objectifs...',
+    submitDemo: 'Demander la démo'
   },
   en: {
     // Navigation
@@ -99,7 +116,24 @@ const translations = {
     contactEmail: 'Email',
     contactMessage: 'Message',
     contactSend: 'Send',
-    contactCalendly: 'Schedule a demo'
+    contactCalendly: 'Schedule a demo',
+    
+    // Demo Dialog
+    demoButton: 'Request a demo',
+    demoTitle: 'Book a demonstration',
+    demoSubmitted: 'Request sent!',
+    demoSubmittedDescription: 'We will contact you quickly to organize your demonstration.',
+    firstName: 'First name',
+    lastName: 'Last name',
+    email: 'Email',
+    club: 'Club',
+    message: 'Message',
+    firstNamePlaceholder: 'Your first name',
+    lastNamePlaceholder: 'Your last name',
+    emailPlaceholder: 'your.email@example.com',
+    clubPlaceholder: 'Your club name',
+    messagePlaceholder: 'Describe your needs and objectives...',
+    submitDemo: 'Request demo'
   }
 };
 

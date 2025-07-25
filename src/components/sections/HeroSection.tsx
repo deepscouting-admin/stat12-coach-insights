@@ -1,20 +1,20 @@
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
-import stadiumHero from '@/assets/stadium-hero.jpg';
+import aiBackground from '@/assets/ai-background.jpg';
 
 const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={stadiumHero}
-          alt="Stadium"
+          src={aiBackground}
+          alt="AI Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 hero-overlay"></div>
+        <div className="absolute inset-0 bg-background/60"></div>
       </div>
 
       {/* Content */}

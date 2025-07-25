@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import ScrollIndicator from '@/components/ScrollIndicator';
+import CTAButton from '@/components/CTAButton';
 import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import PricingSection from '@/components/sections/PricingSection';
@@ -34,6 +35,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <CTAButton />
       <main>
         <HeroSection />
         <FeaturesSection />

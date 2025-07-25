@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 220 15% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142 76% 36%;
+    --primary: 220 91% 60%;
     --primary-foreground: 220 15% 8%;
 
     --secondary: 220 15% 15%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 142 76% 36%;
+    --accent: 220 91% 60%;
     --accent-foreground: 220 15% 8%;
 
     --destructive: 0 84% 60%;
@@ -34,12 +34,12 @@ All colors MUST be HSL.
 
     --border: 220 15% 20%;
     --input: 220 15% 15%;
-    --ring: 142 76% 36%;
+    --ring: 220 91% 60%;
 
     --radius: 0.75rem;
     
     /* STAT12 Custom Colors */
-    --stat12-green: 142 76% 36%;
+    --stat12-blue: 220 91% 60%;
     --stat12-dark: 220 15% 8%;
     --stat12-gray: 220 15% 15%;
     --stat12-light: 210 40% 98%;
@@ -71,7 +71,7 @@ All colors MUST be HSL.
     --popover: 220 15% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142 76% 36%;
+    --primary: 220 91% 60%;
     --primary-foreground: 220 15% 8%;
 
     --secondary: 220 15% 15%;
@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 142 76% 36%;
+    --accent: 220 91% 60%;
     --accent-foreground: 220 15% 8%;
 
     --destructive: 0 84% 60%;
@@ -88,7 +88,7 @@ All colors MUST be HSL.
 
     --border: 220 15% 20%;
     --input: 220 15% 15%;
-    --ring: 142 76% 36%;
+    --ring: 220 91% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
