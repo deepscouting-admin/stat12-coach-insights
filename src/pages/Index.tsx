@@ -1,12 +1,47 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react';
+import Navigation from '@/components/Navigation';
+import ScrollIndicator from '@/components/ScrollIndicator';
+import HeroSection from '@/components/sections/HeroSection';
+import FeaturesSection from '@/components/sections/FeaturesSection';
+import PricingSection from '@/components/sections/PricingSection';
+import WhySection from '@/components/sections/WhySection';
+import ContactSection from '@/components/sections/ContactSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'features', 'pricing', 'why', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <main>
+        <HeroSection />
+        <FeaturesSection />
+        <PricingSection />
+        <WhySection />
+        <ContactSection />
+      </main>
+      <ScrollIndicator />
     </div>
   );
 };
