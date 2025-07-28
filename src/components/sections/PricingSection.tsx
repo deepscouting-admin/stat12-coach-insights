@@ -8,41 +8,75 @@ const PricingSection = () => {
 
   const plans = [
     {
-      name: t('pricingBasic'),
+      name: t('pricingStarter'),
+      badge: 'Starter',
       price: t('pricingFree'),
       subtitle: t('pricingPartner'),
       fallback: t('pricingOtherwise'),
-      features: [t('basicFeatures')],
-      isPopular: false
+      description: t('starterDesc'),
+      features: [
+        t('starterFeature1'),
+        t('starterFeature2'),
+        t('starterFeature3')
+      ],
+      isPopular: false,
+      isPremium: false
     },
     {
-      name: t('pricingBronze'),
-      price: '+39€/mois',
+      name: t('pricingPro'),
+      badge: 'Pro',
+      price: '39€/mois',
       subtitle: '',
       fallback: '',
-      features: [t('bronzeFeatures')],
-      isPopular: false
+      description: t('proDesc'),
+      features: [
+        t('proFeature1'),
+        t('proFeature2'),
+        t('proFeature3'),
+        t('proFeature4')
+      ],
+      isPopular: false,
+      isPremium: true
     },
     {
-      name: t('pricingSilver'),
-      price: '+79€/mois',
+      name: t('pricingPremium'),
+      badge: 'Premium',
+      price: '79€/mois',
       subtitle: '',
       fallback: '',
-      features: [t('silverFeatures')],
-      isPopular: true
+      description: t('premiumDesc'),
+      features: [
+        t('premiumFeature1'),
+        t('premiumFeature2'),
+        t('premiumFeature3'),
+        t('premiumFeature4'),
+        t('premiumFeature5')
+      ],
+      isPopular: true,
+      isPremium: true
     },
     {
-      name: t('pricingGold'),
-      price: '+129€/mois',
+      name: t('pricingEnterprise'),
+      badge: 'Enterprise',
+      price: '129€/mois',
       subtitle: '',
       fallback: '',
-      features: [t('goldFeatures')],
-      isPopular: false
+      description: t('enterpriseDesc'),
+      features: [
+        t('enterpriseFeature1'),
+        t('enterpriseFeature2'),
+        t('enterpriseFeature3'),
+        t('enterpriseFeature4'),
+        t('enterpriseFeature5'),
+        t('enterpriseFeature6')
+      ],
+      isPopular: false,
+      isPremium: true
     }
   ];
 
   return (
-    <section id="pricing" className="py-20">
+    <section id="pricing" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -50,56 +84,87 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan, index) => (
-            <Card
-              key={index}
-              className={`relative rounded-2xl transition-all duration-300 hover:scale-105 ${
-                plan.isPopular 
-                  ? 'border-primary shadow-lg shadow-primary/25' 
-                  : 'border-border hover:border-primary/50'
-              }`}
-            >
-              {plan.isPopular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                    Populaire
+        <div className="relative">
+          {/* Premium Banner */}
+          <div className="hidden lg:block absolute top-0 left-1/4 right-0 h-12 bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20">
+            <div className="flex items-center justify-center h-full">
+              <span className="text-primary font-semibold text-sm">OFFRES PREMIUM</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0">
+            {plans.map((plan, index) => (
+              <Card
+                key={index}
+                className={`relative h-full flex flex-col ${
+                  index === 0 
+                    ? 'lg:rounded-r-none lg:border-r-0' 
+                    : plan.isPremium 
+                      ? index === 1 
+                        ? 'lg:rounded-none lg:border-r-0 lg:mt-12' 
+                        : index === 2 
+                          ? 'lg:rounded-none lg:border-r-0 lg:mt-12 border-primary shadow-lg shadow-primary/25' 
+                          : 'lg:rounded-l-none lg:mt-12'
+                      : ''
+                } ${
+                  plan.isPopular 
+                    ? 'border-primary shadow-lg shadow-primary/25 scale-105' 
+                    : 'border-border hover:border-primary/50'
+                } transition-all duration-300 hover:shadow-xl`}
+              >
+                {/* Badge */}
+                <div className="absolute -top-3 left-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    plan.isPopular 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'bg-secondary text-secondary-foreground'
+                  }`}>
+                    {plan.badge}
                   </span>
                 </div>
-              )}
-              
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                  {plan.subtitle && (
-                    <p className="text-sm text-muted-foreground mt-1">{plan.subtitle}</p>
-                  )}
-                  {plan.fallback && (
-                    <p className="text-sm text-muted-foreground">{plan.fallback}</p>
-                  )}
-                </div>
-              </CardHeader>
-              
-              <CardContent className="pt-0">
-                <div className="space-y-3 mb-6">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start space-x-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-card-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+
+                {plan.isPopular && (
+                  <div className="absolute -top-3 right-4">
+                    <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                      Populaire
+                    </span>
+                  </div>
+                )}
                 
-                <Button 
-                  className="w-full" 
-                  variant={plan.isPopular ? "default" : "outline"}
-                >
-                  {t('heroButton')}
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                <CardHeader className="text-center pb-4 pt-8">
+                  <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
+                  <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                    {plan.subtitle && (
+                      <p className="text-sm text-muted-foreground mt-1">{plan.subtitle}</p>
+                    )}
+                    {plan.fallback && (
+                      <p className="text-sm text-muted-foreground">{plan.fallback}</p>
+                    )}
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pt-0 flex-1 flex flex-col">
+                  <div className="space-y-3 mb-6 flex-1">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start space-x-3">
+                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-card-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button 
+                    className="w-full" 
+                    variant={plan.isPopular ? "default" : "outline"}
+                  >
+                    {t('subscribe')}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

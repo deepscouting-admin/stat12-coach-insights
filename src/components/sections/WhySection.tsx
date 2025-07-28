@@ -58,30 +58,6 @@ const WhySection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-card rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 text-card-foreground">
-              Rejoignez la révolution de l'analyse football
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Plus de 500 clubs nous font déjà confiance pour améliorer leurs performances.
-            </p>
-            <div className="flex justify-center items-center space-x-8 text-sm text-muted-foreground">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">500+</div>
-                <div>Clubs partenaires</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">24h</div>
-                <div>Délai de traitement</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">98%</div>
-                <div>Satisfaction client</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

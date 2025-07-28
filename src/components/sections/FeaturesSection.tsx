@@ -13,25 +13,25 @@ const FeaturesSection = () => {
       icon: BarChart3,
       title: t('feature1'),
       image: rapportCollectif1,
-      description: "Phases offensives, défensives, CPA..."
+      description: t('feature1Desc')
     },
     {
       icon: Users,
       title: t('feature2'),
       image: rapportIndividuel,
-      description: "Techniques & physiques"
+      description: t('feature2Desc')
     },
     {
       icon: Search,
       title: t('feature3'),
       image: rapportCollectif2,
-      description: "Via stats croisées"
+      description: t('feature3Desc')
     },
     {
       icon: Video,
       title: t('feature4'),
       image: analyseVideo,
-      description: "Montages facilement"
+      description: t('feature4Desc')
     }
   ];
 
@@ -42,6 +42,9 @@ const FeaturesSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             {t('featuresTitle')}
           </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            {t('featuresSubtitle')}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -53,10 +56,10 @@ const FeaturesSection = () => {
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-2 text-card-foreground">
+                    <h3 className="text-xl font-semibold mb-3 text-card-foreground">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

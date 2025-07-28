@@ -6,37 +6,70 @@ const translations = {
   fr: {
     // Navigation
     home: 'Accueil',
-    features: 'Fonctionnalités',
+    features: 'Solutions',
     pricing: 'Tarifs',
     why: 'Pourquoi STAT12 ?',
     contact: 'Contact',
+    faq: 'FAQ',
+    demo: 'Réserve ta démo',
     
     // Hero Section
-    heroTitle: 'Vos matchs. Vos données. Vos décisions.',
-    heroSubtitle: 'STAT12 transforme vos vidéos de matchs en statistiques exploitables en 24h.',
-    heroButton: '🎯 Demander une démo',
+    heroTitle: 'La Data au service de votre performance.',
+    heroSubtitle: 'À tous les niveaux.',
+    heroDescription: 'Grâce à notre IA révolutionnaire, nous transformons vos vidéos de match en rapports d\'analyse avancée : Rapports d\'analyse de performance collective, performances individuelles, Analyse vidéo simplifiée, statistiques physiques...',
+    heroDescription2: 'Une approche innovante, pensée pour démocratiser l\'analyse de performance, du monde amateur jusqu\'aux structures professionnelles.',
+    heroButton: 'Réserve ta démo',
     
     // Features Section
-    featuresTitle: 'Tout ce qu\'un coach attend de la data. Enfin accessible.',
-    feature1: 'Rapport collectif détaillé (phases offensives, défensives, CPA…)',
-    feature2: 'Statistiques individuelles de chaque joueur (techniques & physiques)',
-    feature3: 'Analyse des adversaires (via stats croisées)',
-    feature4: 'Outil vidéo pour créer des montages facilement',
+    featuresTitle: 'Des solutions innovantes pour révolutionner votre analyse',
+    featuresSubtitle: 'Découvrez nos outils pensés pour maximiser les performances de vos équipes',
+    feature1: 'Rapports collectifs',
+    feature1Desc: 'Analyse complète des phases de jeu : offensives, défensives, transitions et situations spéciales. Comprendre le collectif pour mieux progresser.',
+    feature2: 'Rapports individuels', 
+    feature2Desc: 'Statistiques détaillées de chaque joueur : techniques, physiques et tactiques. Personnalisez le développement de vos joueurs.',
+    feature3: 'Analyse de l\'adversaire',
+    feature3Desc: 'Décryptez le jeu adverse grâce à nos analyses croisées. Préparez vos matchs avec une longueur d\'avance stratégique.',
+    feature4: 'Analyse vidéo simplifiée',
+    feature4Desc: 'Créez facilement des montages vidéo pour illustrer vos analyses. Communiquez efficacement avec vos joueurs.',
     
     // Pricing Section
     pricingTitle: 'Des formules simples, pensées pour tous les clubs',
-    pricingBasic: 'Basique',
-    pricingBronze: 'Bronze',
-    pricingSilver: 'Silver',
-    pricingGold: 'Gold',
+    pricingStarter: 'Starter',
+    pricingPro: 'Pro', 
+    pricingPremium: 'Premium',
+    pricingEnterprise: 'Enterprise',
     pricingFree: 'Gratuit',
     pricingPartner: '(si ligue partenaire)',
     pricingOtherwise: 'Sinon 159€/mois',
-    pricingIncluded: 'Inclus',
-    basicFeatures: '2 accès / Stats collectives de vos matchs',
-    bronzeFeatures: 'Offre basique + 4 accès + Stats individuelles',
-    silverFeatures: 'Bronze + 8 accès + Outil d\'analyse vidéo',
-    goldFeatures: 'Silver + Accès adversaires + Stats physiques',
+    
+    starterDesc: 'Parfait pour débuter l\'analyse',
+    proDesc: 'L\'essentiel pour clubs amateurs',
+    premiumDesc: 'La solution complète',
+    enterpriseDesc: 'Pour les structures avancées',
+    
+    starterFeature1: '2 utilisateurs inclus',
+    starterFeature2: 'Rapports collectifs de base',
+    starterFeature3: 'Support email',
+    
+    proFeature1: '4 utilisateurs inclus', 
+    proFeature2: 'Rapports collectifs avancés',
+    proFeature3: 'Statistiques individuelles',
+    proFeature4: 'Support prioritaire',
+    
+    premiumFeature1: '8 utilisateurs inclus',
+    premiumFeature2: 'Toutes les fonctionnalités Pro',
+    premiumFeature3: 'Outil d\'analyse vidéo',
+    premiumFeature4: 'Analyse comparative',
+    premiumFeature5: 'Formation incluse',
+    
+    enterpriseFeature1: 'Utilisateurs illimités',
+    enterpriseFeature2: 'Toutes les fonctionnalités Premium',
+    enterpriseFeature3: 'Analyse des adversaires',
+    enterpriseFeature4: 'Statistiques physiques avancées',
+    enterpriseFeature5: 'Support dédié',
+    enterpriseFeature6: 'API personnalisée',
+    
+    subscribe: 'Souscrire',
     
     // Why Section
     whyTitle: 'La data n\'est plus réservée aux clubs pros.',
@@ -44,6 +77,27 @@ const translations = {
     why2: 'Aucun matériel requis (simple vidéo de match)',
     why3: 'Solution intuitive et accessible',
     why4: 'Pensé pour les besoins terrain',
+    
+    // FAQ Section
+    faqTitle: 'Questions fréquemment posées',
+    faq1Question: 'Comment fonctionne l\'analyse vidéo ?',
+    faq1Answer: 'Envoyez-nous simplement votre vidéo de match, notre IA analyse automatiquement les actions et génère vos rapports en moins de 24h.',
+    faq2Question: 'Quel format de vidéo acceptez-vous ?',
+    faq2Answer: 'Nous acceptons tous les formats vidéo courants (MP4, AVI, MOV). La qualité HD est recommandée pour une analyse optimale.',
+    faq3Question: 'Combien d\'utilisateurs peuvent accéder aux données ?',
+    faq3Answer: 'Cela dépend de votre formule : 2 utilisateurs pour Starter, 4 pour Pro, 8 pour Premium, et illimité pour Enterprise.',
+    faq4Question: 'Proposez-vous une formation à l\'utilisation ?',
+    faq4Answer: 'Oui, une formation complète est incluse dans les formules Premium et Enterprise. Les autres formules bénéficient du support email.',
+    faq5Question: 'Puis-je résilier mon abonnement à tout moment ?',
+    faq5Answer: 'Absolument, vous pouvez résilier votre abonnement à tout moment sans frais supplémentaires.',
+    
+    // Footer
+    footerAbout: 'À propos',
+    footerLegal: 'Mentions légales',
+    footerPrivacy: 'Politique de confidentialité',
+    footerTerms: 'Conditions générales',
+    footerContact: 'Contact',
+    footerRights: '© 2024 STAT12. Tous droits réservés.',
     
     // Contact Section
     contactTitle: 'Besoin d\'infos ? Une démo ?',
@@ -53,7 +107,7 @@ const translations = {
     contactCalendly: 'Planifier une démo',
     
     // Demo Dialog
-    demoButton: 'Demander une démo',
+    demoButton: 'Réserve ta démo',
     demoTitle: 'Réserver une démonstration',
     demoSubmitted: 'Demande envoyée !',
     demoSubmittedDescription: 'Nous vous recontacterons rapidement pour organiser votre démonstration.',

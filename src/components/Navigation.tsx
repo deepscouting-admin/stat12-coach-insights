@@ -18,8 +18,11 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
     { id: 'features', label: t('features') },
     { id: 'pricing', label: t('pricing') },
     { id: 'why', label: t('why') },
+    { id: 'faq', label: t('faq') },
     { id: 'contact', label: t('contact') }
   ];
+
+  const demoSection = { id: 'demo', label: t('demo'), isDemo: true };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -45,7 +48,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {sections.map((section) => (
               <button
                 key={section.id}
@@ -57,6 +60,12 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                 {section.label}
               </button>
             ))}
+            <Button
+              className="neon-button text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_hsl(var(--stat12-teal)_/_0.6)] transition-all duration-300"
+              size="sm"
+            >
+              {demoSection.label}
+            </Button>
           </div>
 
           {/* Language Toggle & Mobile Menu */}
@@ -99,6 +108,12 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                   {section.label}
                 </button>
               ))}
+              <Button
+                className="neon-button text-white font-semibold mx-4 mt-2 hover:bg-primary/20 hover:shadow-[0_0_30px_hsl(var(--stat12-teal)_/_0.6)] transition-all duration-300"
+                size="sm"
+              >
+                {demoSection.label}
+              </Button>
             </div>
           </div>
         )}
