@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
-import aiBackground from '@/assets/ai-background.jpg';
+import footballAiBackground from '@/assets/football-ai-background.jpg';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -10,8 +10,8 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={aiBackground}
-          alt="AI Background"
+          src={footballAiBackground}
+          alt="Football AI Background"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-background/60"></div>
@@ -27,7 +27,7 @@ const HeroSection = () => {
         </p>
         <Button 
           size="lg" 
-          className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl shadow-lg transform transition-transform hover:scale-105"
+          className="neon-button text-white px-8 py-6 text-lg font-semibold rounded-xl hover:bg-primary/20 hover:shadow-[0_0_40px_hsl(var(--stat12-teal)_/_0.8)] transform transition-all duration-300 hover:scale-105"
         >
           {t('heroButton')}
         </Button>
