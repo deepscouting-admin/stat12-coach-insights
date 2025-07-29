@@ -5,17 +5,17 @@ import CTAButton from '@/components/CTAButton';
 import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import PricingSection from '@/components/sections/PricingSection';
-import WhySection from '@/components/sections/WhySection';
+import AboutSection from '@/components/sections/AboutSection';
 import FAQSection from '@/components/sections/FAQSection';
 import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'features', 'pricing', 'why', 'faq', 'contact'];
+      const sections = ['about', 'features', 'pricing', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const sectionId of sections) {
@@ -40,9 +40,9 @@ const Index = () => {
       <CTAButton />
       <main>
         <HeroSection />
+        <AboutSection />
         <FeaturesSection />
         <PricingSection />
-        <WhySection />
         <FAQSection />
         <ContactSection />
       </main>

@@ -11,7 +11,11 @@ const ContactSection = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
+    club: '',
+    role: '',
     message: ''
   });
 
@@ -24,7 +28,7 @@ const ContactSection = () => {
       description: "Nous vous recontacterons dans les plus brefs délais.",
     });
     
-    setFormData({ email: '', message: '' });
+    setFormData({ firstName: '', lastName: '', email: '', club: '', role: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,6 +62,39 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                        {t('contactFirstName')}
+                      </label>
+                      <Input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="Votre prénom"
+                        required
+                        className="rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                        {t('contactLastName')}
+                      </label>
+                      <Input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        placeholder="Votre nom"
+                        required
+                        className="rounded-xl"
+                      />
+                    </div>
+                  </div>
+                  
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       {t('contactEmail')}
@@ -73,6 +110,39 @@ const ContactSection = () => {
                       className="rounded-xl"
                     />
                   </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="club" className="block text-sm font-medium mb-2">
+                        {t('contactClub')}
+                      </label>
+                      <Input
+                        type="text"
+                        id="club"
+                        name="club"
+                        value={formData.club}
+                        onChange={handleChange}
+                        placeholder="Nom de votre club"
+                        required
+                        className="rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="role" className="block text-sm font-medium mb-2">
+                        {t('contactRole')}
+                      </label>
+                      <Input
+                        type="text"
+                        id="role"
+                        name="role"
+                        value={formData.role}
+                        onChange={handleChange}
+                        placeholder="Votre rôle"
+                        required
+                        className="rounded-xl"
+                      />
+                    </div>
+                  </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
@@ -84,7 +154,7 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Parlez-nous de votre club et de vos besoins..."
-                      rows={5}
+                      rows={4}
                       required
                       className="rounded-xl"
                     />
@@ -123,18 +193,6 @@ const ContactSection = () => {
                 </CardContent>
               </Card>
 
-              <Card className="rounded-2xl bg-primary/5 border-primary/20">
-                <CardContent className="pt-6">
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold mb-2 text-primary">
-                      Réponse garantie sous 24h
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Notre équipe s'engage à vous répondre rapidement pour vous accompagner dans votre projet.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>

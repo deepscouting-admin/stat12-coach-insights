@@ -26,6 +26,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
     lastName: '',
     email: '',
     club: '',
+    role: '',
     message: ''
   });
 
@@ -42,6 +43,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
       lastName: '',
       email: '',
       club: '',
+      role: '',
       message: ''
     });
     onClose();
@@ -102,16 +104,29 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
             />
           </div>
           
-          <div>
-            <Label htmlFor="club">{t('club')}</Label>
-            <Input
-              id="club"
-              name="club"
-              value={formData.club}
-              onChange={handleChange}
-              required
-              placeholder={t('clubPlaceholder')}
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="club">{t('club')}</Label>
+              <Input
+                id="club"
+                name="club"
+                value={formData.club}
+                onChange={handleChange}
+                required
+                placeholder={t('clubPlaceholder')}
+              />
+            </div>
+            <div>
+              <Label htmlFor="role">{t('role')}</Label>
+              <Input
+                id="role"
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+                required
+                placeholder={t('rolePlaceholder')}
+              />
+            </div>
           </div>
           
           <div>

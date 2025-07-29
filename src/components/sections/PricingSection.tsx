@@ -8,67 +8,66 @@ const PricingSection = () => {
 
   const plans = [
     {
-      name: t('pricingStarter'),
-      badge: 'Starter',
+      name: t('pricingBasic'),
+      badge: 'Basic',
       price: t('pricingFree'),
       subtitle: t('pricingPartner'),
       fallback: t('pricingOtherwise'),
-      description: t('starterDesc'),
+      description: t('basicDesc'),
       features: [
-        t('starterFeature1'),
-        t('starterFeature2'),
-        t('starterFeature3')
+        t('basicFeature1'),
+        t('basicFeature2'),
+        t('basicFeature3')
       ],
       isPopular: false,
       isPremium: false
     },
     {
-      name: t('pricingPro'),
-      badge: 'Pro',
+      name: t('pricingBronze'),
+      badge: 'Bronze',
       price: '39€/mois',
       subtitle: '',
       fallback: '',
-      description: t('proDesc'),
+      description: t('bronzeDesc'),
       features: [
-        t('proFeature1'),
-        t('proFeature2'),
-        t('proFeature3'),
-        t('proFeature4')
+        t('bronzeFeature1'),
+        t('bronzeFeature2'),
+        t('bronzeFeature3'),
+        t('bronzeFeature4')
       ],
       isPopular: false,
       isPremium: true
     },
     {
-      name: t('pricingPremium'),
-      badge: 'Premium',
+      name: t('pricingSilver'),
+      badge: 'Silver',
       price: '79€/mois',
       subtitle: '',
       fallback: '',
-      description: t('premiumDesc'),
+      description: t('silverDesc'),
       features: [
-        t('premiumFeature1'),
-        t('premiumFeature2'),
-        t('premiumFeature3'),
-        t('premiumFeature4'),
-        t('premiumFeature5')
+        t('silverFeature1'),
+        t('silverFeature2'),
+        t('silverFeature3'),
+        t('silverFeature4'),
+        t('silverFeature5')
       ],
       isPopular: true,
       isPremium: true
     },
     {
-      name: t('pricingEnterprise'),
-      badge: 'Enterprise',
+      name: t('pricingGold'),
+      badge: 'Gold',
       price: '129€/mois',
       subtitle: '',
       fallback: '',
-      description: t('enterpriseDesc'),
+      description: t('goldDesc'),
       features: [
-        t('enterpriseFeature1'),
-        t('enterpriseFeature2'),
-        t('enterpriseFeature3'),
-        t('enterpriseFeature4'),
-        t('enterpriseFeature5'),
-        t('enterpriseFeature6')
+        t('goldFeature1'),
+        t('goldFeature2'),
+        t('goldFeature3'),
+        t('goldFeature4'),
+        t('goldFeature5')
       ],
       isPopular: false,
       isPremium: true

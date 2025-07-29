@@ -14,10 +14,9 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   const { language, setLanguage, t } = useLanguage();
 
   const sections = [
-    { id: 'home', label: t('home') },
+    { id: 'about', label: t('about') },
     { id: 'features', label: t('features') },
     { id: 'pricing', label: t('pricing') },
-    { id: 'why', label: t('why') },
     { id: 'faq', label: t('faq') },
     { id: 'contact', label: t('contact') }
   ];
@@ -61,7 +60,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               </button>
             ))}
             <Button
-              className="neon-button text-white font-semibold px-4 py-2 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_hsl(var(--stat12-teal)_/_0.6)] transition-all duration-300"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-lg font-semibold transition-all duration-300"
               size="sm"
             >
               {demoSection.label}
@@ -109,7 +108,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                 </button>
               ))}
               <Button
-                className="neon-button text-white font-semibold mx-4 mt-2 hover:bg-primary/20 hover:shadow-[0_0_30px_hsl(var(--stat12-teal)_/_0.6)] transition-all duration-300"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 mx-4 mt-2 font-semibold transition-all duration-300"
                 size="sm"
               >
                 {demoSection.label}
