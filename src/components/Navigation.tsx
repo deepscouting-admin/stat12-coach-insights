@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage, Language } from '@/hooks/useLanguage';
-import stat12Logo from '@/assets/stat12-logo.png';
+
 
 interface NavigationProps {
   activeSection: string;
@@ -42,7 +42,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img src={stat12Logo} alt="STAT12" className="h-8 w-8" />
+            <img src="/lovable-uploads/57de24d8-f93d-4cee-aa89-775ec8d6777f.png" alt="STAT12" className="h-8 w-auto" />
             <span className="text-xl font-bold text-primary">STAT12</span>
           </div>
 
