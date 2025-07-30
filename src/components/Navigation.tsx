@@ -46,7 +46,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               onClick={() => scrollToSection('home')}
               className="hover:opacity-80 transition-opacity"
             >
-              <img src="/lovable-uploads/57de24d8-f93d-4cee-aa89-775ec8d6777f.png" alt="STAT12" className="h-11 w-auto" />
+              <img src="/lovable-uploads/34e9a7f2-95d1-46f3-a0ea-7102aae0dd70.png" alt="STAT12" className="h-11 w-auto" />
             </button>
           </div>
 

@@ -83,10 +83,10 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        <div className="relative">
-          {/* Basic Plan - Separated */}
-          <div className="mb-8">
-            <Card className="max-w-sm mx-auto border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+          {/* Basic Plan - Left side, taller */}
+          <div className="lg:col-span-1">
+            <Card className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl h-[580px] flex flex-col">
               <div className="absolute -top-3 left-4 z-20">
                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-secondary text-secondary-foreground">
                   {plans[0].badge}
@@ -127,10 +127,10 @@ const PricingSection = () => {
             </Card>
           </div>
 
-          {/* Premium Section */}
-          <div className="relative">
+          {/* Premium Section - Right side */}
+          <div className="lg:col-span-3">
             {/* Premium Banner */}
-            <div className="bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20 h-12 mb-0">
+            <div className="bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20 h-14 mb-0">
               <div className="flex items-center justify-center h-full">
                 <span className="text-primary font-semibold text-sm">PREMIUM</span>
               </div>
@@ -140,12 +140,12 @@ const PricingSection = () => {
               {plans.slice(1).map((plan, index) => (
                 <Card
                   key={index + 1}
-                  className={`relative h-full flex flex-col ${
+                  className={`relative flex flex-col ${
                     index === 0 
-                      ? 'lg:rounded-r-none lg:border-r-0' 
+                      ? 'lg:rounded-r-none lg:border-r-0 h-[520px]' 
                       : index === 1 
-                        ? 'lg:rounded-none lg:border-r-0 border-primary shadow-lg shadow-primary/25 transform lg:scale-105' 
-                        : 'lg:rounded-l-none'
+                        ? 'lg:rounded-none lg:border-r-0 border-primary shadow-lg shadow-primary/25 h-[540px] -mb-5' 
+                        : 'lg:rounded-l-none h-[520px]'
                   } ${
                     plan.isPopular 
                       ? 'border-primary shadow-lg shadow-primary/25' 
@@ -153,7 +153,7 @@ const PricingSection = () => {
                   } transition-all duration-300 hover:shadow-xl`}
                 >
                   {/* Badge */}
-                  <div className="absolute -top-3 left-4 z-20">
+                  <div className="absolute -top-6 left-4 z-20">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       plan.isPopular 
                         ? 'bg-primary text-primary-foreground' 
@@ -164,7 +164,7 @@ const PricingSection = () => {
                   </div>
 
                   {plan.isPopular && (
-                    <div className="absolute -top-3 right-4 z-20">
+                    <div className="absolute -top-6 right-4 z-20">
                       <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
                         Populaire
                       </span>
