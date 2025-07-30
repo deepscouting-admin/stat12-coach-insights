@@ -10,9 +10,10 @@ const ScrollIndicator = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       
-      // Hide indicator when near bottom of page
+      // Show indicator only in first section and hide when scrolled significantly or near bottom
+      const showInFirstSection = scrollPosition < windowHeight * 0.8;
       const nearBottom = scrollPosition + windowHeight >= documentHeight - 100;
-      setShowIndicator(!nearBottom);
+      setShowIndicator(showInFirstSection && !nearBottom);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -22,10 +23,10 @@ const ScrollIndicator = () => {
   if (!showIndicator) return null;
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="flex flex-col items-center space-y-1 smart-scroll">
-        <ChevronDown className="w-4 h-4 text-primary opacity-90" />
-        <ChevronDown className="w-4 h-4 text-primary opacity-70" />
+    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="flex flex-col items-center space-y-0 animate-bounce">
+        <ChevronDown className="w-5 h-5 text-white opacity-80" />
+        <ChevronDown className="w-5 h-5 text-white opacity-60 -mt-2" />
       </div>
     </div>
   );

@@ -85,13 +85,13 @@ const PricingSection = () => {
 
         <div className="relative">
           {/* Premium Banner */}
-          <div className="hidden lg:block absolute top-0 left-1/4 right-0 h-12 bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20">
+          <div className="hidden lg:block absolute top-0 left-1/4 right-0 h-10 bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20 z-10">
             <div className="flex items-center justify-center h-full">
               <span className="text-primary font-semibold text-sm">OFFRES PREMIUM</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:mt-10">
             {plans.map((plan, index) => (
               <Card
                 key={index}
@@ -100,19 +100,19 @@ const PricingSection = () => {
                     ? 'lg:rounded-r-none lg:border-r-0' 
                     : plan.isPremium 
                       ? index === 1 
-                        ? 'lg:rounded-none lg:border-r-0 lg:mt-12' 
+                        ? 'lg:rounded-none lg:border-r-0' 
                         : index === 2 
-                          ? 'lg:rounded-none lg:border-r-0 lg:mt-12 border-primary shadow-lg shadow-primary/25' 
-                          : 'lg:rounded-l-none lg:mt-12'
+                          ? 'lg:rounded-none lg:border-r-0 border-primary shadow-lg shadow-primary/25 transform lg:scale-105' 
+                          : 'lg:rounded-l-none'
                       : ''
                 } ${
                   plan.isPopular 
-                    ? 'border-primary shadow-lg shadow-primary/25 scale-105' 
+                    ? 'border-primary shadow-lg shadow-primary/25' 
                     : 'border-border hover:border-primary/50'
                 } transition-all duration-300 hover:shadow-xl`}
               >
                 {/* Badge */}
-                <div className="absolute -top-3 left-4">
+                <div className="absolute -top-3 left-4 z-20">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     plan.isPopular 
                       ? 'bg-primary text-primary-foreground' 
@@ -123,7 +123,7 @@ const PricingSection = () => {
                 </div>
 
                 {plan.isPopular && (
-                  <div className="absolute -top-3 right-4">
+                  <div className="absolute -top-3 right-4 z-20">
                     <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
                       Populaire
                     </span>

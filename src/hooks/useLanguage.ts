@@ -16,7 +16,6 @@ const translations = {
     heroTitle: 'La "Data" au service de toutes les performances',
     heroSubtitle: 'Amateurs comme pros.',
     heroDescription: 'Grâce à notre IA révolutionnaire, nous transformons vos vidéos de match en rapports d\'analyse avancée : Rapports d\'analyse de performance collective, performances individuelles, Analyse vidéo simplifiée, statistiques physiques...',
-    heroDescription2: 'Notre plateforme s\'adapte à tous les clubs, du secteur amateur aux structures élites, sans besoin de matériel spécialisé. Bénéficiez d\'une interface intuitive, de statistiques poussées et de solutions pensées avec les coachs pour répondre aux vraies exigences du terrain.',
     heroButton: 'Réserve ta démo',
     
     // About Section
@@ -145,7 +144,6 @@ const translations = {
     heroTitle: 'Data-driven performance at every level',
     heroSubtitle: 'From grassroots to elite.',
     heroDescription: 'Our revolutionary AI transforms your match footage into advanced analytical reports: team performance analysis, individual player metrics, simplified video analysis, physical statistics...',
-    heroDescription2: 'Our platform adapts to all clubs, from amateur teams to elite structures, without requiring specialized equipment. Benefit from an intuitive interface, comprehensive statistics, and solutions designed with coaches to meet real field requirements.',
     heroButton: 'Book a demo',
     
     // About Section

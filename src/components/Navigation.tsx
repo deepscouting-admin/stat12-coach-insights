@@ -41,9 +41,8 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img src="/lovable-uploads/57de24d8-f93d-4cee-aa89-775ec8d6777f.png" alt="STAT12" className="h-8 w-auto" />
-            <span className="text-xl font-bold text-primary">STAT12</span>
+          <div className="flex items-center">
+            <img src="/lovable-uploads/57de24d8-f93d-4cee-aa89-775ec8d6777f.png" alt="STAT12" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
