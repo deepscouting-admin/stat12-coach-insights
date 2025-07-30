@@ -42,7 +42,15 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/lovable-uploads/57de24d8-f93d-4cee-aa89-775ec8d6777f.png" alt="STAT12" className="h-10 w-auto" />
+            <button
+              onClick={() => scrollToSection('home')}
+              className="flex items-center h-11 px-4 bg-background rounded-lg border border-border hover:bg-secondary/50 transition-colors"
+            >
+              <div className="relative">
+                <span className="text-2xl font-bold text-foreground">STAT</span>
+                <span className="text-2xl font-bold text-secondary-foreground">12</span>
+              </div>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
