@@ -83,12 +83,12 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-start">
           {/* Basic Plan - Left side, taller */}
-          <div className="lg:col-span-1">
-            <Card className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl h-[580px] flex flex-col">
+          <div className="xl:col-span-1">
+            <Card className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl h-[620px] flex flex-col mx-auto max-w-sm">
               <div className="absolute -top-3 left-4 z-20">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-secondary text-secondary-foreground">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold neon-tag">
                   {plans[0].badge}
                 </span>
               </div>
@@ -128,25 +128,19 @@ const PricingSection = () => {
           </div>
 
           {/* Premium Section - Right side */}
-          <div className="lg:col-span-3">
+          <div className="xl:col-span-1">
             {/* Premium Banner */}
-            <div className="bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20 h-14 mb-0">
+            <div className="bg-primary/10 rounded-t-2xl border-t border-l border-r border-primary/20 h-16 mb-0">
               <div className="flex items-center justify-center h-full">
                 <span className="text-primary font-semibold text-sm">PREMIUM</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-1 gap-4">
               {plans.slice(1).map((plan, index) => (
                 <Card
                   key={index + 1}
-                  className={`relative flex flex-col ${
-                    index === 0 
-                      ? 'lg:rounded-r-none lg:border-r-0 h-[520px]' 
-                      : index === 1 
-                        ? 'lg:rounded-none lg:border-r-0 border-primary shadow-lg shadow-primary/25 h-[540px] -mb-5' 
-                        : 'lg:rounded-l-none h-[520px]'
-                  } ${
+                  className={`relative flex flex-col h-[520px] ${
                     plan.isPopular 
                       ? 'border-primary shadow-lg shadow-primary/25' 
                       : 'border-border hover:border-primary/50'
@@ -156,7 +150,7 @@ const PricingSection = () => {
                   <div className="absolute -top-6 left-4 z-20">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       plan.isPopular 
-                        ? 'bg-primary text-primary-foreground' 
+                        ? 'neon-tag' 
                         : 'bg-secondary text-secondary-foreground'
                     }`}>
                       {plan.badge}
@@ -165,7 +159,7 @@ const PricingSection = () => {
 
                   {plan.isPopular && (
                     <div className="absolute -top-6 right-4 z-20">
-                      <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="neon-tag px-3 py-1 rounded-full text-xs font-semibold">
                         Populaire
                       </span>
                     </div>

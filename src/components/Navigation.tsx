@@ -46,7 +46,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               onClick={() => scrollToSection('home')}
               className="hover:opacity-80 transition-opacity"
             >
-              <img src="/lovable-uploads/34e9a7f2-95d1-46f3-a0ea-7102aae0dd70.png" alt="STAT12" className="h-11 w-auto" />
+              <img src="/lovable-uploads/34e9a7f2-95d1-46f3-a0ea-7102aae0dd70.png" alt="STAT12" className="h-9 w-auto" />
             </button>
           </div>
 
@@ -64,7 +64,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               </button>
             ))}
             <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-lg font-semibold transition-all duration-300"
+              className="neon-button text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
               size="sm"
             >
               {demoSection.label}
@@ -112,7 +112,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                 </button>
               ))}
               <Button
-                className="bg-primary text-primary-foreground hover:bg-primary/90 mx-4 mt-2 font-semibold transition-all duration-300"
+                className="neon-button text-white font-semibold mx-4 mt-2 px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
                 size="sm"
               >
                 {demoSection.label}
