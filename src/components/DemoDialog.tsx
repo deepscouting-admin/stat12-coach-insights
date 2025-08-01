@@ -33,9 +33,12 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // TODO: Send email to contact@deepscouting.com with form data
+    // This requires Supabase integration for backend functionality
+    
     toast({
-      title: t('demoSubmitted'),
-      description: t('demoSubmittedDescription'),
+      title: "Demande envoyée !",
+      description: "Nos équipes reviendront vers vous au plus vite pour programmer votre rendez-vous.",
     });
     
     setFormData({
@@ -130,19 +133,19 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
           </div>
           
           <div>
-            <Label htmlFor="message">{t('message')}</Label>
+            <Label htmlFor="message">Autres infos</Label>
             <Textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder={t('messagePlaceholder')}
+              placeholder="Informations complémentaires (optionnel)"
               rows={4}
             />
           </div>
           
           <Button type="submit" className="w-full" size="lg">
-            {t('submitDemo')}
+            Réserver
           </Button>
         </form>
       </DialogContent>

@@ -22,7 +22,9 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
+    // TODO: Send email to contact@deepscouting.com with form data
+    // This requires Supabase integration for backend functionality
+    
     toast({
       title: t('contactToastTitle'),
       description: t('contactToastDescription'),
