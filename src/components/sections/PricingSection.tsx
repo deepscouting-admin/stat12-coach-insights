@@ -85,124 +85,119 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        {/* Mobile layout - carousel */}
-        <div className="block lg:hidden">
-          <div className="relative">
-            <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory px-4 scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
-              {plans.map((plan, index) => (
+        {/* Mobile and Tablet layout - horizontal carousel */}
+        <div className="block xl:hidden">
+          <div className="relative mt-8">
+            <div className="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory px-4" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+              {plans.map((plan) => (
                 <Card
                   key={plan.id}
-                  className={`relative flex flex-col min-w-[280px] max-w-[280px] ${
-                    plan.id === 'basic' ? 'min-h-[600px]' : 'min-h-[560px]'
-                  } snap-center ${
+                  className={`relative flex flex-col min-w-[280px] max-w-[280px] min-h-[520px] snap-center ${
                     plan.isPopular 
                       ? 'border-primary shadow-lg shadow-primary/25' 
                       : 'border-transparent hover:border-primary/50'
                   } transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
                 >
-                {/* Badge */}
-                <div className="absolute -top-3 left-4 z-20">
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    plan.isPopular || !plan.isPremium
-                      ? 'neon-tag' 
-                      : 'bg-secondary text-secondary-foreground'
-                  }`}>
-                    {plan.badge}
-                  </span>
-                </div>
-
-                {plan.isPopular && (
-                  <div className="absolute -top-3 right-4 z-20">
-                    <span className="neon-tag px-3 py-1 rounded-full text-xs font-semibold">
-                      Populaire
+                  {/* Badge */}
+                  <div className="absolute -top-3 left-4 z-20">
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      plan.isPopular || !plan.isPremium
+                        ? 'neon-tag' 
+                        : 'bg-secondary text-secondary-foreground'
+                    }`}>
+                      {plan.badge}
                     </span>
                   </div>
-                )}
-                
-                <CardHeader className="text-center pb-4 pt-8">
-                  <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
-                  {plan.isPremium && (
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <span className={`text-sm ${isAnnual ? 'text-muted-foreground' : 'text-foreground'}`}>
-                        Mois
+
+                  {plan.isPopular && (
+                    <div className="absolute -top-3 right-4 z-20">
+                      <span className="neon-tag px-3 py-1 rounded-full text-xs font-semibold">
+                        Populaire
                       </span>
-                      <button
-                        onClick={() => setIsAnnual(!isAnnual)}
-                        className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-                          isAnnual ? 'bg-primary' : 'bg-muted'
-                        }`}
-                      >
-                        <span
-                          className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
-                            isAnnual ? 'translate-x-5' : 'translate-x-1'
+                    </div>
+                  )}
+                  
+                  <CardHeader className="text-center pb-4 pt-8">
+                    <CardTitle className="text-lg font-bold mb-2">{plan.name}</CardTitle>
+                    {plan.isPremium && (
+                      <div className="flex items-center justify-center gap-2 mb-3">
+                        <span className={`text-sm ${isAnnual ? 'text-muted-foreground' : 'text-foreground'}`}>
+                          Mois
+                        </span>
+                        <button
+                          onClick={() => setIsAnnual(!isAnnual)}
+                          className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                            isAnnual ? 'bg-primary' : 'bg-muted'
                           }`}
-                        />
-                      </button>
-                      <span className={`text-sm ${!isAnnual ? 'text-muted-foreground' : 'text-foreground'}`}>
-                        An
-                      </span>
-                    </div>
-                  )}
-                  <div className="mb-4">
-                    {plan.id === 'basic' ? (
-                      <>
-                        <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                        <div className="mt-2">
-                          <p className="text-sm text-white">{plan.partnerText}</p>
-                          <p className="text-base text-primary font-medium">{plan.fallback}</p>
-                        </div>
-                      </>
-                    ) : (
-                      <span className="text-3xl font-bold text-primary">
-                        {isAnnual ? plan.annualPrice : plan.monthlyPrice}<span className="text-lg">/mois</span>
-                      </span>
-                    )}
-                  </div>
-                </CardHeader>
-               
-                <CardContent className="pt-0 flex-1 flex flex-col">
-                  {plan.includesText && (
-                    <div className="mb-4">
-                      <p className="text-sm text-white font-normal mb-3">
-                        {plan.includesText}
-                      </p>
-                    </div>
-                  )}
-                  <div className="space-y-3 mb-6 flex-1">
-                    {plan.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start space-x-3">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-card-foreground">{feature}</span>
+                        >
+                          <span
+                            className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
+                              isAnnual ? 'translate-x-5' : 'translate-x-1'
+                            }`}
+                          />
+                        </button>
+                        <span className={`text-sm ${!isAnnual ? 'text-muted-foreground' : 'text-foreground'}`}>
+                          An
+                        </span>
                       </div>
-                    ))}
-                  </div>
+                    )}
+                    <div className="mb-4">
+                      {plan.id === 'basic' ? (
+                        <>
+                          <span className="text-2xl font-bold text-primary">{plan.price}</span>
+                          <div className="mt-2">
+                            <p className="text-xs text-white">{plan.partnerText}</p>
+                            <p className="text-sm text-primary font-medium">{plan.fallback}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <span className="text-2xl font-bold text-primary">
+                          {isAnnual ? plan.annualPrice : plan.monthlyPrice}<span className="text-base">/mois</span>
+                        </span>
+                      )}
+                    </div>
+                  </CardHeader>
                  
-                 <Button 
-                   className="w-full" 
-                   variant={plan.isPopular ? "default" : "outline"}
-                 >
-                   {t('subscribe')}
-                 </Button>
-               </CardContent>
-              </Card>
-             ))}
-           </div>
-           
-           {/* Mobile CTA after pricing */}
-           <div className="mt-8 text-center px-4">
-             <Button 
-               size="lg" 
-               className="neon-button w-full max-w-sm mx-auto"
-             >
-               <Calendar className="w-4 h-4 mr-2" />
-               {t('demoButton')}
-             </Button>
-           </div>
+                  <CardContent className="pt-0 flex-1 flex flex-col">
+                    {plan.includesText && (
+                      <div className="mb-4">
+                        <p className="text-xs text-white font-normal mb-3">
+                          {plan.includesText}
+                        </p>
+                      </div>
+                    )}
+                    <div className="space-y-2 mb-6 flex-1">
+                      {plan.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start space-x-2">
+                          <Check className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-card-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                   
+                   <Button 
+                     className="w-full" 
+                     variant={plan.isPopular ? "default" : "outline"}
+                     size="sm"
+                   >
+                     {t('subscribe')}
+                   </Button>
+                 </CardContent>
+                </Card>
+               ))}
+             </div>
+             
+             {/* Scroll indicators */}
+             <div className="flex justify-center space-x-2 mt-4">
+               {plans.map((_, index) => (
+                 <div key={index} className="w-2 h-2 rounded-full bg-muted"></div>
+               ))}
+             </div>
           </div>
         </div>
 
-        {/* Desktop layout */}
-        <div className="hidden lg:block max-w-7xl mx-auto">
+        {/* Desktop layout - exactly as before */}
+        <div className="hidden xl:block max-w-7xl mx-auto">
           <div className="grid grid-cols-4 gap-6 items-end">
             {/* Basic plan */}
             <Card className="relative flex flex-col h-[650px] border-transparent hover:border-primary/50 transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm">
@@ -248,7 +243,7 @@ const PricingSection = () => {
               
               {/* Premium plans */}
               <div className="grid grid-cols-3 gap-6">
-                {premiumPlans.map((plan, index) => (
+                {premiumPlans.map((plan) => (
                   <Card
                     key={plan.id}
                     className={`relative flex flex-col h-[570px] ${

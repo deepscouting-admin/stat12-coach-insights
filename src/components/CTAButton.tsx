@@ -6,49 +6,45 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const CTAButton = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [currentSection, setCurrentSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'pricing'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setCurrentSection(section);
-            break;
-          }
-        }
-      }
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Only show on desktop or on specific sections on mobile
-  const shouldShow = window.innerWidth >= 768 || ['hero', 'pricing'].includes(currentSection);
-
-  if (!shouldShow) return <DemoDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />;
-
   return (
     <>
-      <div className="fixed top-20 right-4 z-40 md:top-4 md:right-8">
+      {/* Desktop button - fixed in top right */}
+      <div className="hidden md:block fixed top-4 right-8 z-40">
         <Button
           onClick={() => setIsDialogOpen(true)}
-          className="neon-button text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300 text-sm md:text-base"
+          className="neon-button"
           size="sm"
         >
-          <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
-          <span className="hidden sm:inline">{t('demoButton')}</span>
-          <span className="sm:hidden">Démo</span>
+          <Calendar className="w-4 h-4 mr-2" />
+          {t('demoButton')}
         </Button>
       </div>
+
+      {/* Mobile button - sticky at bottom after scroll */}
+      {isScrolled && (
+        <div className="md:hidden fixed bottom-6 left-4 right-4 z-50">
+          <Button
+            onClick={() => setIsDialogOpen(true)}
+            className="neon-button w-full"
+            size="lg"
+          >
+            <Calendar className="w-4 h-4 mr-2" />
+            {t('demoButton')}
+          </Button>
+        </div>
+      )}
       
       <DemoDialog 
         isOpen={isDialogOpen} 
