@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 
@@ -51,7 +51,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {sections.map((section) => (
               <button
                 key={section.id}
@@ -84,7 +84,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
             </Button>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <Button
                 variant="ghost"
                 size="sm"
@@ -98,25 +98,28 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm">
             <div className="flex flex-col space-y-2">
               {sections.map((section) => (
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`text-left py-2 px-4 rounded-md text-sm font-medium transition-colors hover:bg-secondary ${
-                    activeSection === section.id ? 'text-primary bg-secondary' : 'text-muted-foreground'
+                  className={`text-left py-3 px-4 rounded-md text-base font-medium transition-colors hover:bg-secondary/80 ${
+                    activeSection === section.id ? 'text-primary bg-secondary' : 'text-foreground hover:text-primary'
                   }`}
                 >
                   {section.label}
                 </button>
               ))}
-              <Button
-                className="neon-button text-white font-semibold mx-4 mt-2 px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
-                size="sm"
-              >
-                {demoSection.label}
-              </Button>
+              <div className="px-4 pt-4 border-t border-border/50 mt-4">
+                <Button
+                  className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
+                  size="lg"
+                >
+                  <Calendar className="w-4 h-4 mr-2" />
+                  {demoSection.label}
+                </Button>
+              </div>
             </div>
           </div>
         )}

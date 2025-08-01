@@ -85,15 +85,15 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        {/* Mobile layout - scrollable */}
+        {/* Mobile layout - vertical stack */}
         <div className="block lg:hidden">
-          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-2">
+          <div className="flex flex-col gap-6 px-4 pt-8">
             {plans.map((plan, index) => (
               <Card
                 key={plan.id}
-                className={`relative flex flex-col min-w-[260px] sm:min-w-[280px] ${
-                  plan.id === 'basic' ? 'min-h-[580px] sm:h-[620px]' : 'min-h-[540px] sm:h-[580px]'
-                } snap-center ${
+                className={`relative flex flex-col w-full max-w-sm mx-auto ${
+                  plan.id === 'basic' ? 'min-h-[580px]' : 'min-h-[540px]'
+                } ${
                   plan.isPopular 
                     ? 'border-primary shadow-lg shadow-primary/25' 
                     : 'border-transparent hover:border-primary/50'
@@ -118,7 +118,7 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <CardHeader className="text-center pb-4 pt-8">
+                 <CardHeader className="text-center pb-4 pt-10">
                   <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
                   {plan.isPremium && (
                     <div className="flex items-center justify-center gap-2 mb-3">
@@ -151,11 +151,11 @@ const PricingSection = () => {
                           <p className="text-base text-primary font-medium">{plan.fallback}</p>
                         </div>
                       </>
-                    ) : (
-                      <span className="text-3xl font-bold text-primary">
-                        {isAnnual ? plan.annualPrice : plan.monthlyPrice}<span className="text-lg">/mois</span>
-                      </span>
-                    )}
+                     ) : (
+                       <span className="text-3xl font-bold text-primary">
+                         +{isAnnual ? plan.annualPrice : plan.monthlyPrice}<span className="text-lg">/mois</span>
+                       </span>
+                     )}
                   </div>
                 </CardHeader>
                
@@ -280,11 +280,11 @@ const PricingSection = () => {
                           An
                         </span>
                       </div>
-                      <div className="mb-4">
-                        <span className="text-3xl font-bold text-primary">
-                          {isAnnual ? plan.annualPrice : plan.monthlyPrice}<span className="text-lg">/mois</span>
-                        </span>
-                      </div>
+                       <div className="mb-4">
+                         <span className="text-3xl font-bold text-primary">
+                           +{isAnnual ? plan.annualPrice : plan.monthlyPrice}<span className="text-lg">/mois</span>
+                         </span>
+                       </div>
                     </CardHeader>
                    
                     <CardContent className="pt-0 flex-1 flex flex-col">
