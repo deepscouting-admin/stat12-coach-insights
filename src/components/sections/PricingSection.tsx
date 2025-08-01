@@ -1,4 +1,4 @@
-import { Check, Calendar } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -85,21 +85,20 @@ const PricingSection = () => {
           </h2>
         </div>
 
-        {/* Mobile layout - carousel */}
+        {/* Mobile layout - scrollable */}
         <div className="block lg:hidden">
-          <div className="relative">
-            <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory px-4 scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
-              {plans.map((plan, index) => (
-                <Card
-                  key={plan.id}
-                  className={`relative flex flex-col min-w-[280px] max-w-[280px] ${
-                    plan.id === 'basic' ? 'min-h-[600px]' : 'min-h-[560px]'
-                  } snap-center ${
-                    plan.isPopular 
-                      ? 'border-primary shadow-lg shadow-primary/25' 
-                      : 'border-transparent hover:border-primary/50'
-                  } transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
-                >
+          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-2">
+            {plans.map((plan, index) => (
+              <Card
+                key={plan.id}
+                className={`relative flex flex-col min-w-[260px] sm:min-w-[280px] ${
+                  plan.id === 'basic' ? 'min-h-[580px] sm:h-[620px]' : 'min-h-[540px] sm:h-[580px]'
+                } snap-center ${
+                  plan.isPopular 
+                    ? 'border-primary shadow-lg shadow-primary/25' 
+                    : 'border-transparent hover:border-primary/50'
+                } transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
+              >
                 {/* Badge */}
                 <div className="absolute -top-3 left-4 z-20">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
@@ -185,19 +184,7 @@ const PricingSection = () => {
                  </Button>
                </CardContent>
               </Card>
-             ))}
-           </div>
-           
-           {/* Mobile CTA after pricing */}
-           <div className="mt-8 text-center px-4">
-             <Button 
-               size="lg" 
-               className="neon-button w-full max-w-sm mx-auto"
-             >
-               <Calendar className="w-4 h-4 mr-2" />
-               {t('demoButton')}
-             </Button>
-           </div>
+            ))}
           </div>
         </div>
 
@@ -323,7 +310,7 @@ const PricingSection = () => {
                      </Button>
                    </CardContent>
                   </Card>
-                 ))}
+                ))}
               </div>
             </div>
           </div>
