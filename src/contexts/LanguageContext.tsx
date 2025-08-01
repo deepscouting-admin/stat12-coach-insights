@@ -14,8 +14,8 @@ const translations = {
     
     // Hero Section
     heroTitle: 'La Data au service\nde vos performances',
-    heroSubtitle: 'Amateurs comme pros.',
-    heroDescription: 'Grâce à notre IA révolutionnaire, nous transformons vos vidéos de match en rapports d\'analyse avancée : rapports collectifs, rapports individuels, analyse vidéo simplifiée, statistiques physiques...désormais accessibles à tous.',
+    heroSubtitle: 'Amateurs comme pros',
+    heroDescription: 'Grâce à notre IA révolutionnaire, nous transformons vos vidéos de match en rapports d\'analyse avancée : rapports collectifs, rapports individuels, analyse vidéo simplifiée, statistiques physiques...désormais accessibles à tous',
     heroButton: 'Réserve ta démo',
     
     // About Section

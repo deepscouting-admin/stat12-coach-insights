@@ -77,22 +77,22 @@ const PricingSection = () => {
   const premiumPlans = plans.slice(1);
 
   return (
-    <section id="pricing" className="py-20 bg-background">
+    <section id="pricing" className="py-16 sm:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-2">
             {t('pricingTitle')}
           </h2>
         </div>
 
         {/* Mobile layout - scrollable */}
         <div className="block lg:hidden">
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-2">
             {plans.map((plan, index) => (
               <Card
                 key={plan.id}
-                className={`relative flex flex-col min-w-[280px] ${
-                  plan.id === 'basic' ? 'h-[620px]' : 'h-[580px]'
+                className={`relative flex flex-col min-w-[260px] sm:min-w-[280px] ${
+                  plan.id === 'basic' ? 'min-h-[580px] sm:h-[620px]' : 'min-h-[540px] sm:h-[580px]'
                 } snap-center ${
                   plan.isPopular 
                     ? 'border-primary shadow-lg shadow-primary/25' 

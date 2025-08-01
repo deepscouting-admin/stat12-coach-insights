@@ -83,7 +83,7 @@ const PointCloudDemo = () => {
             La Data au service<br />de vos performances
           </h1>
           <h2 className="text-3xl font-light mb-8 text-primary/90">
-            Amateurs comme pros.
+            Amateurs comme pros
           </h2>
           <p className="text-xl mb-10 text-white/90 leading-relaxed font-light">
             Grâce à notre IA révolutionnaire, nous transformons vos vidéos de match en rapports d'analyse avancée
