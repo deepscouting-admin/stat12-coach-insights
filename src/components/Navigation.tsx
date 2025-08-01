@@ -98,30 +98,36 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm">
-            <div className="flex flex-col space-y-2">
-              {sections.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  className={`text-left py-3 px-4 rounded-md text-base font-medium transition-colors hover:bg-secondary/80 ${
-                    activeSection === section.id ? 'text-primary bg-secondary' : 'text-foreground hover:text-primary'
-                  }`}
-                >
-                  {section.label}
-                </button>
-              ))}
-              <div className="px-4 pt-4 border-t border-border/50 mt-4">
-                <Button
-                  className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
-                  size="lg"
-                >
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {demoSection.label}
-                </Button>
+          <>
+            <div 
+              className="fixed inset-0 bg-black/50 z-40 lg:hidden" 
+              onClick={() => setIsOpen(false)}
+            />
+            <div className="lg:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm relative z-50">
+              <div className="flex flex-col space-y-2">
+                {sections.map((section) => (
+                  <button
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
+                    className={`text-left py-3 px-4 rounded-md text-base font-medium transition-colors hover:bg-secondary/80 ${
+                      activeSection === section.id ? 'text-primary border-2 border-primary' : 'text-foreground hover:text-primary'
+                    }`}
+                  >
+                    {section.label}
+                  </button>
+                ))}
+                <div className="px-4 pt-4 border-t border-border/50 mt-4">
+                  <Button
+                    className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
+                    size="lg"
+                  >
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {demoSection.label}
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>

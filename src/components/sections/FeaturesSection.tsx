@@ -49,8 +49,8 @@ const FeaturesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {features.map((feature, index) => (
-            <div key={index} className="group">
-              <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+            <div key={index} className="group h-full">
+              <div className="bg-card rounded-2xl p-6 shadow-lg neon-glow-card transition-all duration-300 group-hover:scale-105 h-full flex flex-col">
                 <div className="flex items-start space-x-4 mb-6">
                   <div className="bg-primary/10 p-3 rounded-xl">
                     <feature.icon className="w-6 h-6 text-primary" />
@@ -64,7 +64,7 @@ const FeaturesSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="rounded-xl overflow-hidden">
+                <div className="rounded-xl overflow-hidden flex-1">
                   <img
                     src={feature.image}
                     alt={feature.title}

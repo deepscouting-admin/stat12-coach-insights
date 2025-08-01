@@ -97,7 +97,7 @@ const PricingSection = () => {
                   plan.isPopular 
                     ? 'border-primary shadow-lg shadow-primary/25' 
                     : 'border-transparent hover:border-primary/50'
-                } transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
+                } neon-glow-card transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
               >
                 {/* Badge */}
                 <div className="absolute -top-3 left-4 z-20">
@@ -192,7 +192,7 @@ const PricingSection = () => {
         <div className="hidden lg:block max-w-7xl mx-auto">
           <div className="grid grid-cols-4 gap-6 items-end">
             {/* Basic plan */}
-            <Card className="relative flex flex-col h-[650px] border-transparent hover:border-primary/50 transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm">
+            <Card className="relative flex flex-col h-[650px] border-transparent hover:border-primary/50 neon-glow-card transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm">
               <div className="absolute -top-3 left-4 z-20">
                 <span className="neon-tag px-3 py-1 rounded-full text-xs font-semibold">
                   {basicPlan.badge}
@@ -242,7 +242,7 @@ const PricingSection = () => {
                       plan.isPopular 
                         ? 'border-primary shadow-lg shadow-primary/25' 
                         : 'border-transparent hover:border-primary/50'
-                    } transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
+                    } neon-glow-card transition-all duration-300 hover:shadow-xl bg-card/50 backdrop-blur-sm`}
                   >
                     <div className="absolute -top-3 left-4 z-20">
                       <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold">
