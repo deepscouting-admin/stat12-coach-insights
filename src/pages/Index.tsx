@@ -13,7 +13,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
-  const { language } = useLanguage(); // Force re-render when language changes
+  const { language, t } = useLanguage(); // Force re-render when language changes
 
   useEffect(() => {
     const handleScroll = () => {
