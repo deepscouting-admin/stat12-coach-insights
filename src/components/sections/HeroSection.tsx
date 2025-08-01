@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { DemoDialog } from '@/components/DemoDialog';
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
@@ -22,12 +25,18 @@ const HeroSection = () => {
           <span className="block sm:inline">accessibles à tous</span>
         </p>
         <Button 
+          onClick={() => setIsDemoDialogOpen(true)}
           size="lg" 
           className="neon-button text-white px-8 py-6 text-lg font-semibold rounded-xl hover:bg-primary/20 hover:shadow-[0_0_40px_rgba(93,206,180,0.8)] transform transition-all duration-300 hover:scale-105"
         >
           {t('heroButton')}
         </Button>
       </div>
+      
+      <DemoDialog 
+        isOpen={isDemoDialogOpen} 
+        onClose={() => setIsDemoDialogOpen(false)} 
+      />
     </section>
   );
 };

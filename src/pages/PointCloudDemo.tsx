@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { DemoDialog } from '@/components/DemoDialog';
 import subtleTechBackground from '@/assets/subtle-tech-background.jpg';
 import '../assets/point-cloud-concepts.css';
 
 const PointCloudDemo = () => {
   const [selectedConcept, setSelectedConcept] = useState(1);
+  const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
 
   const concepts = [
     {
@@ -89,6 +91,7 @@ const PointCloudDemo = () => {
             Grâce à notre IA révolutionnaire, nous transformons vos vidéos de match en rapports d'analyse avancée
           </p>
           <Button 
+            onClick={() => setIsDemoDialogOpen(true)}
             size="lg" 
             className="neon-button text-white px-8 py-6 text-lg font-semibold rounded-xl hover:bg-primary/20 hover:shadow-[0_0_40px_rgba(93,206,180,0.8)] transform transition-all duration-300 hover:scale-105"
           >
@@ -107,6 +110,11 @@ const PointCloudDemo = () => {
           </p>
         </Card>
       </div>
+      
+      <DemoDialog 
+        isOpen={isDemoDialogOpen} 
+        onClose={() => setIsDemoDialogOpen(false)} 
+      />
     </div>
   );
 };
