@@ -9,9 +9,11 @@ import AboutSection from '@/components/sections/AboutSection';
 import FAQSection from '@/components/sections/FAQSection';
 import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const { language } = useLanguage(); // Force re-render when language changes
 
   useEffect(() => {
     const handleScroll = () => {
