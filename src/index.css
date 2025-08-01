@@ -8,25 +8,25 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 82 100% 5%;
+    --background: 210 20% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 210 40% 12%;
+    --card: 210 20% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 210 40% 12%;
+    --popover: 210 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 164 55% 59%;
+    --primary: 180 55% 58%;
     --primary-foreground: 195 50% 9%;
 
-    --secondary: 164 55% 59%;
+    --secondary: 180 55% 58%;
     --secondary-foreground: 195 50% 9%;
 
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 164 55% 59%;
+    --accent: 180 55% 58%;
     --accent-foreground: 195 50% 9%;
 
     --destructive: 0 84% 60%;
@@ -38,9 +38,9 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
-    /* STAT12 Custom Colors - Inspired by logo */
-    --stat12-teal: 180 55% 55%;
-    --stat12-dark: 220 25% 15%;
+    /* STAT12 Custom Colors - Teal/Blue theme */
+    --stat12-teal: 180 55% 58%;
+    --stat12-dark: 210 20% 8%;
     --stat12-gray: 220 15% 20%;
     --stat12-light: 210 40% 98%;
     
@@ -66,25 +66,25 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 82 100% 5%;
+    --background: 210 20% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 210 40% 12%;
+    --card: 210 20% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 210 40% 12%;
+    --popover: 210 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 164 55% 59%;
+    --primary: 180 55% 58%;
     --primary-foreground: 195 50% 9%;
 
-    --secondary: 164 55% 59%;
+    --secondary: 180 55% 58%;
     --secondary-foreground: 195 50% 9%;
 
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 164 55% 59%;
+    --accent: 180 55% 58%;
     --accent-foreground: 195 50% 9%;
 
     --destructive: 0 84% 60%;
