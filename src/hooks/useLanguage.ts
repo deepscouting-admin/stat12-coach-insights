@@ -249,7 +249,6 @@ const translations = {
 
 export const useLanguage = () => {
   const [language, setLanguage] = useState<Language>('fr');
-  const [rerender, setRerender] = useState(0);
 
   useEffect(() => {
     const browserLang = navigator.language.toLowerCase();
@@ -263,7 +262,6 @@ export const useLanguage = () => {
 
   const changeLanguage = (newLanguage: Language) => {
     setLanguage(newLanguage);
-    setRerender(prev => prev + 1); // Force re-render
   };
 
   return { language, setLanguage: changeLanguage, t };
