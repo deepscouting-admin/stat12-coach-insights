@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 210 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 180 55% 58%;
+    --primary: 164 57% 58%;
     --primary-foreground: 195 50% 9%;
 
-    --secondary: 180 55% 58%;
+    --secondary: 164 57% 58%;
     --secondary-foreground: 195 50% 9%;
 
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 180 55% 58%;
+    --accent: 164 57% 58%;
     --accent-foreground: 195 50% 9%;
 
     --destructive: 0 84% 60%;
@@ -38,8 +38,8 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
-    /* STAT12 Custom Colors - Teal/Blue theme */
-    --stat12-teal: 180 55% 58%;
+    /* STAT12 Custom Colors - Green/Blue theme */
+    --stat12-teal: 164 57% 58%;
     --stat12-dark: 210 20% 8%;
     --stat12-gray: 220 15% 20%;
     --stat12-light: 210 40% 98%;
@@ -75,16 +75,16 @@ All colors MUST be HSL.
     --popover: 210 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 180 55% 58%;
+    --primary: 164 57% 58%;
     --primary-foreground: 195 50% 9%;
 
-    --secondary: 180 55% 58%;
+    --secondary: 164 57% 58%;
     --secondary-foreground: 195 50% 9%;
 
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 180 55% 58%;
+    --accent: 164 57% 58%;
     --accent-foreground: 195 50% 9%;
 
     --destructive: 0 84% 60%;

@@ -44,13 +44,16 @@ const translations = {
     
     // Pricing Section
     pricingTitle: 'Des formules simples, pensées pour tous les clubs',
-    pricingBasic: 'Basic',
+    pricingBasic: 'Basique',
     pricingBronze: 'Bronze',
     pricingSilver: 'Silver',
     pricingGold: 'Gold',
     pricingFree: 'Gratuit*',
-    pricingPartner: '(en partenariat avec la ligue)',
+    pricingPartner: 'Si partenariat avec la ligue',
     pricingOtherwise: 'Sinon 159€/mois',
+    bronzeIncludes: 'Comprend l\'offre Basique, plus :',
+    silverIncludes: 'Comprend l\'offre Bronze, plus :',
+    goldIncludes: 'Comprend l\'offre Silver, plus :',
     
     basicFeature1: '2 utilisateurs inclus',
     basicFeature2: 'Rapports collectifs de base',
@@ -59,18 +62,16 @@ const translations = {
     bronzeFeature1: '4 utilisateurs inclus', 
     bronzeFeature2: 'Rapports collectifs avancés',
     bronzeFeature3: 'Statistiques individuelles',
-    bronzeFeature4: 'Support prioritaire',
     
     silverFeature1: '8 utilisateurs inclus',
-    silverFeature2: 'Toutes les fonctionnalités Bronze',
-    silverFeature3: 'Outil d\'analyse vidéo',
-    silverFeature4: 'Analyse de l\'adversaire',
+    silverFeature2: 'Outil d\'analyse vidéo',
+    silverFeature3: 'Analyse de l\'adversaire',
+    silverFeature4: 'Support prioritaire',
     
     goldFeature1: 'Utilisateurs illimités',
-    goldFeature2: 'Toutes les fonctionnalités Silver',
-    goldFeature3: 'Statistiques physiques équipe',
-    goldFeature4: 'Statistiques physiques individuelles',
-    goldFeature5: 'Support dédié',
+    goldFeature2: 'Statistiques physiques équipe',
+    goldFeature3: 'Statistiques physiques individuelles',
+    goldFeature4: 'Support dédié',
     
     subscribe: 'Souscrire',
     
@@ -190,8 +191,11 @@ const translations = {
     pricingSilver: 'Silver',
     pricingGold: 'Gold',
     pricingFree: 'Free*',
-    pricingPartner: '(with league partnership)',
+    pricingPartner: 'With league partnership',
     pricingOtherwise: 'Otherwise €159/month',
+    bronzeIncludes: 'Includes everything in Basic, plus:',
+    silverIncludes: 'Includes everything in Bronze, plus:',
+    goldIncludes: 'Includes everything in Silver, plus:',
     
     basicFeature1: 'Up to 2 users',
     basicFeature2: 'Own team analytics',
@@ -200,18 +204,16 @@ const translations = {
     bronzeFeature1: 'Up to 4 users', 
     bronzeFeature2: 'Advanced team analytics',
     bronzeFeature3: 'Individual player stats',
-    bronzeFeature4: 'Priority support',
     
     silverFeature1: 'Up to 8 users',
-    silverFeature2: 'Everything in Bronze',
-    silverFeature3: 'Integrated video analysis',
-    silverFeature4: 'Opponent analysis',
+    silverFeature2: 'Integrated video analysis',
+    silverFeature3: 'Opponent analysis',
+    silverFeature4: 'Priority support',
     
     goldFeature1: 'Unlimited users',
-    goldFeature2: 'Everything in Silver',
-    goldFeature3: 'Team physical stats',
-    goldFeature4: 'Individual physical stats',
-    goldFeature5: 'Dedicated support',
+    goldFeature2: 'Team physical stats',
+    goldFeature3: 'Individual physical stats',
+    goldFeature4: 'Dedicated support',
     
     subscribe: 'Subscribe',
     
