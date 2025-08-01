@@ -6,10 +6,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { DemoDialog } from '@/components/DemoDialog';
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -187,7 +189,7 @@ const ContactSection = () => {
                     className="w-full rounded-xl" 
                     size="lg"
                     variant="outline"
-                    onClick={() => window.open('https://calendly.com/stat12', '_blank')}
+                    onClick={() => setIsDemoDialogOpen(true)}
                   >
                     <Calendar className="w-4 h-4 mr-2" />
                     {t('contactCalendly')}
@@ -199,6 +201,11 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+      
+      <DemoDialog 
+        isOpen={isDemoDialogOpen} 
+        onClose={() => setIsDemoDialogOpen(false)} 
+      />
     </section>
   );
 };

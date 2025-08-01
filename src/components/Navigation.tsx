@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Globe, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
+import { DemoDialog } from './DemoDialog';
 
 
 interface NavigationProps {
@@ -11,6 +12,7 @@ interface NavigationProps {
 
 const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   const sections = [
@@ -64,6 +66,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               </button>
             ))}
             <Button
+              onClick={() => setIsDemoDialogOpen(true)}
               className="neon-button text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
               size="sm"
             >
@@ -118,6 +121,10 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                 ))}
                 <div className="px-4 pt-4 border-t border-border/50 mt-4">
                   <Button
+                    onClick={() => {
+                      setIsDemoDialogOpen(true);
+                      setIsOpen(false);
+                    }}
                     className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
                     size="lg"
                   >
@@ -130,6 +137,11 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
           </>
         )}
       </div>
+      
+      <DemoDialog 
+        isOpen={isDemoDialogOpen} 
+        onClose={() => setIsDemoDialogOpen(false)} 
+      />
     </nav>
   );
 };
