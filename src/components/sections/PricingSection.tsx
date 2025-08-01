@@ -2,9 +2,11 @@ import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useState } from 'react';
 
 const PricingSection = () => {
   const { t } = useLanguage();
+  const [isAnnual, setIsAnnual] = useState(true);
 
   const plans = [
     {
@@ -24,7 +26,9 @@ const PricingSection = () => {
     {
       name: t('pricingBronze'),
       badge: 'Bronze',
-      price: '39€/mois',
+      monthlyPrice: '39€/mois',
+      annualPrice: '390€/an',
+      previousPlan: 'Basic',
       features: [
         t('bronzeFeature1'),
         t('bronzeFeature2'),
@@ -37,7 +41,9 @@ const PricingSection = () => {
     {
       name: t('pricingSilver'),
       badge: 'Silver',
-      price: '79€/mois',
+      monthlyPrice: '79€/mois',
+      annualPrice: '790€/an',
+      previousPlan: 'Bronze',
       features: [
         t('silverFeature1'),
         t('silverFeature2'),
@@ -50,7 +56,9 @@ const PricingSection = () => {
     {
       name: t('pricingGold'),
       badge: 'Gold',
-      price: '129€/mois',
+      monthlyPrice: '129€/mois',
+      annualPrice: '1290€/an',
+      previousPlan: 'Silver',
       features: [
         t('goldFeature1'),
         t('goldFeature2'),
@@ -70,6 +78,28 @@ const PricingSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             {t('pricingTitle')}
           </h2>
+          
+          {/* Annual/Monthly Toggle */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <span className={`text-sm ${!isAnnual ? 'text-muted-foreground' : 'text-foreground'}`}>
+              Mensuel
+            </span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                isAnnual ? 'bg-primary' : 'bg-muted'
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  isAnnual ? 'translate-x-6' : 'translate-x-1'
+                }`}
+              />
+            </button>
+            <span className={`text-sm ${isAnnual ? 'text-muted-foreground' : 'text-foreground'}`}>
+              Annuel
+            </span>
+          </div>
         </div>
 
         {/* Mobile layout - scrollable */}
@@ -105,28 +135,37 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <CardHeader className="text-center pb-4 pt-8">
-                  <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
-                  <div className="mb-4">
-                    <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                    {plan.subtitle && (
-                      <p className="text-sm text-muted-foreground mt-1">{plan.subtitle}</p>
-                    )}
-                    {plan.fallback && (
-                      <p className="text-sm text-muted-foreground">{plan.fallback}</p>
-                    )}
-                  </div>
-                </CardHeader>
+                 <CardHeader className="text-center pb-4 pt-8">
+                   <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
+                   <div className="mb-4">
+                     <span className="text-3xl font-bold text-primary">
+                       {plan.name === 'Basic' ? plan.price : (isAnnual ? plan.annualPrice : plan.monthlyPrice)}
+                     </span>
+                     {plan.subtitle && (
+                       <p className="text-sm text-muted-foreground mt-1">{plan.subtitle}</p>
+                     )}
+                     {plan.fallback && (
+                       <p className="text-sm text-muted-foreground">{plan.fallback}</p>
+                     )}
+                   </div>
+                 </CardHeader>
                 
-                <CardContent className="pt-0 flex-1 flex flex-col">
-                  <div className="space-y-3 mb-6 flex-1">
-                    {plan.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start space-x-3">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-card-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                 <CardContent className="pt-0 flex-1 flex flex-col">
+                   {plan.previousPlan && (
+                     <div className="mb-4 pb-4 border-b border-border/50">
+                       <p className="text-sm text-muted-foreground text-center">
+                         Tout de {plan.previousPlan}, plus:
+                       </p>
+                     </div>
+                   )}
+                   <div className="space-y-3 mb-6 flex-1">
+                     {plan.features.map((feature, featureIndex) => (
+                       <div key={featureIndex} className="flex items-start space-x-3">
+                         <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                         <span className="text-sm text-card-foreground">{feature}</span>
+                       </div>
+                     ))}
+                   </div>
                   
                   <Button 
                     className="w-full" 
@@ -179,7 +218,7 @@ const PricingSection = () => {
             {/* Premium plans group */}
             <div className="col-span-3">
               {/* Premium header bar */}
-              <div className="bg-primary/10 border border-primary/20 rounded-t-lg p-3 mb-0">
+              <div className="bg-primary/10 border border-primary/20 rounded-t-lg p-3 mb-0" style={{ marginTop: '46px' }}>
                 <h3 className="text-center font-semibold text-primary">PREMIUM</h3>
               </div>
               
@@ -208,22 +247,29 @@ const PricingSection = () => {
                       </div>
                     )}
                     
-                    <CardHeader className="text-center pb-4 pt-8">
-                      <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
-                      <div className="mb-4">
-                        <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                      </div>
-                    </CardHeader>
+                     <CardHeader className="text-center pb-4 pt-8">
+                       <CardTitle className="text-xl font-bold mb-2">{plan.name}</CardTitle>
+                       <div className="mb-4">
+                         <span className="text-3xl font-bold text-primary">
+                           {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                         </span>
+                       </div>
+                     </CardHeader>
                     
-                    <CardContent className="pt-0 flex-1 flex flex-col">
-                      <div className="space-y-3 mb-6 flex-1">
-                        {plan.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-start space-x-3">
-                            <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-card-foreground">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
+                     <CardContent className="pt-0 flex-1 flex flex-col">
+                       <div className="mb-4 pb-4 border-b border-border/50">
+                         <p className="text-sm text-muted-foreground text-center">
+                           Tout de {plan.previousPlan}, plus:
+                         </p>
+                       </div>
+                       <div className="space-y-3 mb-6 flex-1">
+                         {plan.features.map((feature, featureIndex) => (
+                           <div key={featureIndex} className="flex items-start space-x-3">
+                             <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                             <span className="text-sm text-card-foreground">{feature}</span>
+                           </div>
+                         ))}
+                       </div>
                       
                       <Button 
                         className="w-full" 

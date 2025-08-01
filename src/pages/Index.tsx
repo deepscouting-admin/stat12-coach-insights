@@ -42,10 +42,15 @@ const Index = () => {
       <CTAButton />
       <main>
         <HeroSection />
+        <div className="section-separator"></div>
         <AboutSection />
+        <div className="section-separator"></div>
         <FeaturesSection />
+        <div className="section-separator"></div>
         <PricingSection />
+        <div className="section-separator"></div>
         <FAQSection />
+        <div className="section-separator"></div>
         <ContactSection />
       </main>
       <FooterSection />
