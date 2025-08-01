@@ -1,5 +1,5 @@
 import { BarChart3, Users, Search, Video } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/contexts/LanguageContext';
 import rapportCollectif1 from '@/assets/rapport-collectif-1.png';
 import rapportCollectif2 from '@/assets/rapport-collectif-2.png';
 import analyseVideo from '@/assets/analyse-video.png';

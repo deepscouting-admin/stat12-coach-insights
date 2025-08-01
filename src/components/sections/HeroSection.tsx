@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/contexts/LanguageContext';
 import subtleTechBackground from '@/assets/subtle-tech-background.jpg';
 
 const HeroSection = () => {

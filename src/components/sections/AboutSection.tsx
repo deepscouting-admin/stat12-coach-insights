@@ -1,5 +1,5 @@
 import { Zap, Target, Cpu, Gauge } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutSection = () => {
   const { t } = useLanguage();

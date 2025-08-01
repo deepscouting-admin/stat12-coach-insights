@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage, Language } from '@/hooks/useLanguage';
+import { useLanguage, Language } from '@/contexts/LanguageContext';
 
 
 interface NavigationProps {
