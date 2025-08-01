@@ -48,14 +48,9 @@ const translations = {
     pricingBronze: 'Bronze',
     pricingSilver: 'Silver',
     pricingGold: 'Gold',
-    pricingFree: 'Gratuit',
-    pricingPartner: '(si ligue partenaire)',
+    pricingFree: 'Gratuit*',
+    pricingPartner: '(en partenariat avec la ligue)',
     pricingOtherwise: 'Sinon 159€/mois',
-    
-    basicDesc: '',
-    bronzeDesc: '',
-    silverDesc: '',
-    goldDesc: '',
     
     basicFeature1: '2 utilisateurs inclus',
     basicFeature2: 'Rapports collectifs de base',
@@ -179,25 +174,17 @@ const translations = {
     pricingPartner: '(with league partnership)',
     pricingOtherwise: 'Otherwise €159/month',
     
-    basicDesc: '',
-    bronzeDesc: '',
-    silverDesc: '',
-    goldDesc: '',
-    
     basicFeature1: 'Up to 2 users',
     basicFeature2: 'Own team analytics',
-    basicFeature3: '',
     
     bronzeFeature1: 'Up to 4 users', 
     bronzeFeature2: 'Advanced team analytics',
     bronzeFeature3: 'Individual player stats',
-    bronzeFeature4: '',
     
     silverFeature1: 'Up to 8 users',
     silverFeature2: 'Everything in Bronze',
     silverFeature3: 'Integrated video analysis',
     silverFeature4: 'Opponent analysis',
-    silverFeature5: '',
     
     goldFeature1: 'Unlimited users',
     goldFeature2: 'Everything in Silver',
@@ -262,6 +249,7 @@ const translations = {
 
 export const useLanguage = () => {
   const [language, setLanguage] = useState<Language>('fr');
+  const [rerender, setRerender] = useState(0);
 
   useEffect(() => {
     const browserLang = navigator.language.toLowerCase();
@@ -273,5 +261,10 @@ export const useLanguage = () => {
     return translations[language][key] || key;
   };
 
-  return { language, setLanguage, t };
+  const changeLanguage = (newLanguage: Language) => {
+    setLanguage(newLanguage);
+    setRerender(prev => prev + 1); // Force re-render
+  };
+
+  return { language, setLanguage: changeLanguage, t };
 };
