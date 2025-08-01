@@ -24,8 +24,8 @@ const ContactSection = () => {
     
     // Simulate form submission
     toast({
-      title: "Message envoyé !",
-      description: "Nous vous recontacterons dans les plus brefs délais.",
+      title: t('contactToastTitle'),
+      description: t('contactToastDescription'),
     });
     
     setFormData({ firstName: '', lastName: '', email: '', club: '', role: '', message: '' });
@@ -46,7 +46,7 @@ const ContactSection = () => {
             {t('contactTitle')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Notre équipe est là pour répondre à toutes vos questions et vous accompagner dans votre découverte de STAT12.
+            {t('contactDescription')}
           </p>
         </div>
 
@@ -57,7 +57,7 @@ const ContactSection = () => {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>Nous contacter</span>
+                  <span>{t('contactFormTitle')}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -73,7 +73,7 @@ const ContactSection = () => {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        placeholder="Votre prénom"
+                        placeholder={t('contactFirstNamePlaceholder')}
                         required
                         className="rounded-xl"
                       />
@@ -88,7 +88,7 @@ const ContactSection = () => {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        placeholder="Votre nom"
+                        placeholder={t('contactLastNamePlaceholder')}
                         required
                         className="rounded-xl"
                       />
@@ -105,7 +105,7 @@ const ContactSection = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="votre.email@exemple.com"
+                      placeholder={t('contactEmailPlaceholder')}
                       required
                       className="rounded-xl"
                     />
@@ -122,7 +122,7 @@ const ContactSection = () => {
                         name="club"
                         value={formData.club}
                         onChange={handleChange}
-                        placeholder="Nom de votre club"
+                        placeholder={t('contactClubPlaceholder')}
                         required
                         className="rounded-xl"
                       />
@@ -137,7 +137,7 @@ const ContactSection = () => {
                         name="role"
                         value={formData.role}
                         onChange={handleChange}
-                        placeholder="Votre rôle"
+                        placeholder={t('contactRolePlaceholder')}
                         required
                         className="rounded-xl"
                       />
@@ -153,7 +153,7 @@ const ContactSection = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Parlez-nous de votre club et de vos besoins..."
+                      placeholder={t('contactMessagePlaceholder')}
                       rows={4}
                       required
                       className="rounded-xl"
@@ -174,12 +174,12 @@ const ContactSection = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span>Planifier une démonstration</span>
+                    <span>{t('contactDemoTitle')}</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-6">
-                    Découvrez STAT12 en action avec une démonstration personnalisée de 30 minutes.
+                    {t('contactDemoDescription')}
                   </p>
                   <Button 
                     className="w-full rounded-xl" 

@@ -11,7 +11,7 @@ const FooterSection = () => {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-primary mb-4">STAT12</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
-              La solution d'analyse de performance football qui démocratise la data pour tous les niveaux de jeu.
+              {t('footerDescription')}
             </p>
           </div>
 
@@ -21,17 +21,17 @@ const FooterSection = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#features" className="hover:text-primary transition-colors">
-                  Solutions
+                  {t('footerSolutions')}
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="hover:text-primary transition-colors">
-                  Tarifs
+                  {t('footerPricing')}
                 </a>
               </li>
               <li>
                 <a href="#faq" className="hover:text-primary transition-colors">
-                  FAQ
+                  {t('footerFAQ')}
                 </a>
               </li>
             </ul>
@@ -39,7 +39,7 @@ const FooterSection = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Légal</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t('footerLegalTitle')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="/mentions-legales" className="hover:text-primary transition-colors">

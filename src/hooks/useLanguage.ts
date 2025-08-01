@@ -97,6 +97,12 @@ const translations = {
     
     // Contact Section
     contactTitle: 'Besoin d\'infos ? Une démo ?',
+    contactDescription: 'Notre équipe est là pour répondre à toutes vos questions et vous accompagner dans votre découverte de STAT12.',
+    contactFormTitle: 'Nous contacter',
+    contactDemoTitle: 'Planifier une démonstration',
+    contactDemoDescription: 'Découvrez STAT12 en action avec une démonstration personnalisée de 30 minutes.',
+    contactToastTitle: 'Message envoyé !',
+    contactToastDescription: 'Nous vous recontacterons dans les plus brefs délais.',
     contactFirstName: 'Prénom',
     contactLastName: 'Nom',
     contactEmail: 'Email',
@@ -105,6 +111,19 @@ const translations = {
     contactMessage: 'Message',
     contactSend: 'Envoyer',
     contactCalendly: 'Planifier une démo',
+    contactFirstNamePlaceholder: 'Votre prénom',
+    contactLastNamePlaceholder: 'Votre nom',
+    contactEmailPlaceholder: 'votre.email@exemple.com',
+    contactClubPlaceholder: 'Nom de votre club',
+    contactRolePlaceholder: 'Votre rôle',
+    contactMessagePlaceholder: 'Parlez-nous de votre club et de vos besoins...',
+    
+    // Footer
+    footerDescription: 'La solution d\'analyse de performance football qui démocratise la data pour tous les niveaux de jeu.',
+    footerSolutions: 'Solutions',
+    footerPricing: 'Tarifs',
+    footerFAQ: 'FAQ',
+    footerLegalTitle: 'Légal',
     
     // Demo Dialog
     demoButton: 'Réserve ta démo',
@@ -217,6 +236,12 @@ const translations = {
     
     // Contact Section
     contactTitle: 'Need more info or a personal walkthrough?\nOur team is here to answer your questions and guide your Stat12 discovery.',
+    contactDescription: 'Our team is here to answer all your questions and guide you through your Stat12 discovery.',
+    contactFormTitle: 'Contact us',
+    contactDemoTitle: 'Schedule a demonstration',
+    contactDemoDescription: 'Discover STAT12 in action with a personalized 30-minute demonstration.',
+    contactToastTitle: 'Message sent!',
+    contactToastDescription: 'We will get back to you as soon as possible.',
     contactFirstName: 'First name',
     contactLastName: 'Last name',
     contactEmail: 'Email',
@@ -225,6 +250,19 @@ const translations = {
     contactMessage: 'Message',
     contactSend: 'Send',
     contactCalendly: 'Book a demo',
+    contactFirstNamePlaceholder: 'Your first name',
+    contactLastNamePlaceholder: 'Your last name',
+    contactEmailPlaceholder: 'your.email@example.com',
+    contactClubPlaceholder: 'Your club name',
+    contactRolePlaceholder: 'Your role',
+    contactMessagePlaceholder: 'Tell us about your club and your needs...',
+    
+    // Footer
+    footerDescription: 'STAT12\nPerformance analysis for football: bringing match data to every level of the game.',
+    footerSolutions: 'Solutions',
+    footerPricing: 'Pricing',
+    footerFAQ: 'FAQ',
+    footerLegalTitle: 'Legal',
     
     // Demo Dialog
     demoButton: 'Book a demo',
