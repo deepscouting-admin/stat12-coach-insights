@@ -18,7 +18,7 @@ const HeroSection = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
           onLoadedData={(e) => {
-            e.currentTarget.playbackRate = 0.75;
+            e.currentTarget.playbackRate = 0.60;
           }}
         >
           <source src="https://fra.cloud.appwrite.io/v1/storage/buckets/6890b1000039c68c177e/files/6890b1120026c63b3bf8/view?project=677e7e5c0031b8de094a&mode=admin" type="video/mp4" />
