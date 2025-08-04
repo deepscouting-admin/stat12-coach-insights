@@ -12,6 +12,7 @@ const ContactSection = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -21,18 +22,58 @@ const ContactSection = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // TODO: Send email to contact@deepscouting.com with form data
-    // This requires Supabase integration for backend functionality
-    
-    toast({
-      title: t('contactToastTitle'),
-      description: t('contactToastDescription'),
-    });
-    
-    setFormData({ firstName: '', lastName: '', email: '', club: '', role: '', message: '' });
+    try {
+      // Préparer les données pour FormSubmit
+      const submitData = new FormData();
+      submitData.append('firstName', formData.firstName);
+      submitData.append('lastName', formData.lastName);
+      submitData.append('email', formData.email);
+      submitData.append('club', formData.club);
+      submitData.append('role', formData.role);
+      submitData.append('message', formData.message);
+      
+      // Champs cachés pour FormSubmit
+      submitData.append('_subject', `Nouveau contact depuis DeepScouting - ${formData.firstName} ${formData.lastName}`);
+      submitData.append('_captcha', 'false');
+      submitData.append('_template', 'table');
+      
+      // Remplacez 'contact@deepscouting.com' par votre vraie adresse email
+      const response = await fetch('https://formsubmit.co/claire@deepscouting.com', {
+        method: 'POST',
+        body: submitData
+      });
+
+      if (response.ok) {
+        toast({
+          title: t('contactToastTitle'),
+          description: t('contactToastDescription'),
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({ 
+          firstName: '', 
+          lastName: '', 
+          email: '', 
+          club: '', 
+          role: '', 
+          message: '' 
+        });
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi du message.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -80,6 +121,7 @@ const ContactSection = () => {
                         placeholder={t('contactFirstNamePlaceholder')}
                         required
                         className="rounded-xl"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -95,6 +137,7 @@ const ContactSection = () => {
                         placeholder={t('contactLastNamePlaceholder')}
                         required
                         className="rounded-xl"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -112,6 +155,7 @@ const ContactSection = () => {
                       placeholder={t('contactEmailPlaceholder')}
                       required
                       className="rounded-xl"
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -129,6 +173,7 @@ const ContactSection = () => {
                         placeholder={t('contactClubPlaceholder')}
                         required
                         className="rounded-xl"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -144,6 +189,7 @@ const ContactSection = () => {
                         placeholder={t('contactRolePlaceholder')}
                         required
                         className="rounded-xl"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -161,12 +207,18 @@ const ContactSection = () => {
                       rows={4}
                       required
                       className="rounded-xl"
+                      disabled={isSubmitting}
                     />
                   </div>
                   
-                  <Button type="submit" className="w-full rounded-xl" size="lg">
+                  <Button 
+                    type="submit" 
+                    className="w-full rounded-xl" 
+                    size="lg"
+                    disabled={isSubmitting}
+                  >
                     <Send className="w-4 h-4 mr-2" />
-                    {t('contactSend')}
+                    {isSubmitting ? 'Envoi en cours...' : t('contactSend')}
                   </Button>
                 </form>
               </CardContent>
@@ -196,7 +248,6 @@ const ContactSection = () => {
                   </Button>
                 </CardContent>
               </Card>
-
             </div>
           </div>
         </div>
