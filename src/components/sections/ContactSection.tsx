@@ -42,7 +42,7 @@ const ContactSection = () => {
       submitData.append('_template', 'table');
       
       // Remplacez 'contact@deepscouting.com' par votre vraie adresse email
-      const response = await fetch('https://formsubmit.co/claire@deepscouting.com', {
+      const response = await fetch('https://formsubmit.co/contact@deepscouting.com', {
         method: 'POST',
         body: submitData
       });
