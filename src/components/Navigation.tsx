@@ -119,13 +119,13 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                     {section.label}
                   </button>
                 ))}
-                <div className="lg:hidden px-4 pt-4 border-t border-border/50 mt-4">
+                <div className="px-4 pt-4 border-t border-border/50 mt-4">
                   <Button
                     onClick={() => {
                       setIsDemoDialogOpen(true);
                       setIsOpen(false);
                     }}
-                    className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
+                    className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300 lg:hidden"
                     size="lg"
                   >
                     <Calendar className="w-4 h-4 mr-2" />
