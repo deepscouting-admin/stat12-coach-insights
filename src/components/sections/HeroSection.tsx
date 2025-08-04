@@ -44,13 +44,6 @@ const HeroSection = () => {
           <span className="block sm:inline">simplifiée, statistiques physiques...désormais</span>{' '}
           <span className="block sm:inline">accessibles à tous</span>
         </p>
-        <Button 
-          onClick={() => setIsDemoDialogOpen(true)}
-          size="lg" 
-          className="neon-button text-white px-8 py-6 text-lg font-semibold rounded-xl hover:bg-primary/20 hover:shadow-[0_0_40px_rgba(93,206,180,0.8)] transform transition-all duration-300 hover:scale-105 drop-shadow-lg"
-        >
-          {t('heroButton')}
-        </Button>
       </div>
       
       <DemoDialog 
