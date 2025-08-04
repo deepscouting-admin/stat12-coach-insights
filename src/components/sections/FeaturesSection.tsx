@@ -12,19 +12,19 @@ const FeaturesSection = () => {
     {
       icon: BarChart3,
       title: t('feature1'),
-      image: rapportCollectif1,
+      image: "https://raw.githubusercontent.com/clairesecehDS/logo/refs/heads/main/Stat12_Offensive.png",
       description: t('feature1Desc')
     },
     {
       icon: Users,
       title: t('feature2'),
-      image: rapportIndividuel,
+      image: "https://raw.githubusercontent.com/clairesecehDS/logo/refs/heads/main/Stat12_Physical_Indiv.png",
       description: t('feature2Desc')
     },
     {
       icon: Search,
       title: t('feature3'),
-      image: rapportCollectif2,
+      image: "https://raw.githubusercontent.com/clairesecehDS/logo/refs/heads/main/Stat12_OppAnalysis.png",
       description: t('feature3Desc')
     },
     {
