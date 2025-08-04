@@ -21,6 +21,7 @@ interface DemoDialogProps {
 export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -30,26 +31,59 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // TODO: Send email to contact@deepscouting.com with form data
-    // This requires Supabase integration for backend functionality
-    
-    toast({
-      title: "Demande envoyée !",
-      description: "Nos équipes reviendront vers vous au plus vite pour programmer votre rendez-vous.",
-    });
-    
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      club: '',
-      role: '',
-      message: ''
-    });
-    onClose();
+    try {
+      // Préparer les données pour FormSubmit
+      const submitData = new FormData();
+      submitData.append('firstName', formData.firstName);
+      submitData.append('lastName', formData.lastName);
+      submitData.append('email', formData.email);
+      submitData.append('club', formData.club);
+      submitData.append('role', formData.role);
+      submitData.append('message', formData.message || 'Aucune information complémentaire');
+      
+      // Champs cachés pour FormSubmit - spécifiques à la demande de démo
+      submitData.append('_subject', `🎯 DEMANDE DE DÉMO - ${formData.firstName} ${formData.lastName} (${formData.club})`);
+      submitData.append('_captcha', 'false');
+      submitData.append('_template', 'table');
+      
+      // Vous pouvez utiliser la même adresse email ou une différente pour les demandes de démo
+      const response = await fetch('https://formsubmit.co/contact@deepscouting.com', {
+        method: 'POST',
+        body: submitData
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Demande envoyée !",
+          description: "Nos équipes reviendront vers vous au plus vite pour programmer votre rendez-vous.",
+        });
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          club: '',
+          role: '',
+          message: ''
+        });
+        onClose();
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi de votre demande.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -79,6 +113,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
                 onChange={handleChange}
                 required
                 placeholder={t('firstNamePlaceholder')}
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -90,6 +125,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
                 onChange={handleChange}
                 required
                 placeholder={t('lastNamePlaceholder')}
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -104,6 +140,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
               onChange={handleChange}
               required
               placeholder={t('emailPlaceholder')}
+              disabled={isSubmitting}
             />
           </div>
           
@@ -117,6 +154,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
                 onChange={handleChange}
                 required
                 placeholder={t('clubPlaceholder')}
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -128,6 +166,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
                 onChange={handleChange}
                 required
                 placeholder={t('rolePlaceholder')}
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -141,11 +180,17 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
               onChange={handleChange}
               placeholder="Informations complémentaires (optionnel)"
               rows={4}
+              disabled={isSubmitting}
             />
           </div>
           
-          <Button type="submit" className="w-full" size="lg">
-            Réserver
+          <Button 
+            type="submit" 
+            className="w-full" 
+            size="lg"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Envoi en cours...' : 'Réserver'}
           </Button>
         </form>
       </DialogContent>
