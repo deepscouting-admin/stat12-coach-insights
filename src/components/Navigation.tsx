@@ -119,7 +119,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                     {section.label}
                   </button>
                 ))}
-                <div className="px-4 pt-4 border-t border-border/50 mt-4 lg:hidden">
+                <div className="lg:hidden px-4 pt-4 border-t border-border/50 mt-4">
                   <Button
                     onClick={() => {
                       setIsDemoDialogOpen(true);
