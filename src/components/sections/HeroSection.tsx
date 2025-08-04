@@ -21,7 +21,7 @@ const HeroSection = () => {
             e.currentTarget.playbackRate = 0.60;
           }}
         >
-          <source src="https://fra.cloud.appwrite.io/v1/storage/buckets/6890b1000039c68c177e/files/6890b1120026c63b3bf8/view?project=677e7e5c0031b8de094a&mode=admin" type="video/mp4" />
+          <source src="https://fra.cloud.appwrite.io/v1/storage/buckets/6890b1000039c68c177e/files/6890bc4a0025ac74aeb2/view?project=677e7e5c0031b8de094a&mode=admin" type="video/mp4" />
           {/* Fallback pour les navigateurs très anciens */}
           Votre navigateur ne supporte pas les vidéos HTML5.
         </video>
