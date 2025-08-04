@@ -45,11 +45,6 @@ const HeroSection = () => {
           <span className="block sm:inline">accessibles à tous</span>
         </p>
       </div>
-      
-      <DemoDialog 
-        isOpen={isDemoDialogOpen} 
-        onClose={() => setIsDemoDialogOpen(false)} 
-      />
     </section>
   );
 };
