@@ -30,7 +30,7 @@ const FeaturesSection = () => {
     {
       icon: Video,
       title: t('feature4'),
-      image: analyseVideo,
+      image: "https://raw.githubusercontent.com/clairesecehDS/logo/refs/heads/main/Stat12_videoanalysis.png",
       description: t('feature4Desc')
     }
   ];
