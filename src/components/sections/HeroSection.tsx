@@ -27,7 +27,7 @@ const HeroSection = () => {
         </video>
         
         {/* Overlay sombre pour améliorer la lisibilité du texte */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
       <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
