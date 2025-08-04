@@ -101,12 +101,12 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <>
+          <div className="lg:hidden">
             <div 
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden" 
+              className="fixed inset-0 bg-black/50 z-40" 
               onClick={() => setIsOpen(false)}
             />
-            <div className="lg:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm relative z-50">
+            <div className="py-4 border-t border-border bg-background/95 backdrop-blur-sm absolute left-0 right-0 top-full z-50">
               <div className="flex flex-col space-y-2">
                 {sections.map((section) => (
                   <button
@@ -125,7 +125,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                       setIsDemoDialogOpen(true);
                       setIsOpen(false);
                     }}
-                    className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300 lg:hidden"
+                    className="neon-button text-white font-semibold w-full px-6 py-3 rounded-lg hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(93,206,180,0.6)] transition-all duration-300"
                     size="lg"
                   >
                     <Calendar className="w-4 h-4 mr-2" />
@@ -134,7 +134,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
       
