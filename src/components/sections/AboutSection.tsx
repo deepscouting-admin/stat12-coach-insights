@@ -31,10 +31,10 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balanced responsive-title">
             {t('aboutTitle')}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty responsive-text avoid-orphans">
             {t('aboutSubtitle')}
           </p>
         </div>
@@ -48,12 +48,12 @@ const AboutSection = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
                 <feature.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-foreground">
+               <h3 className="text-lg font-semibold mb-3 text-foreground text-balanced">
                 {feature.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+               </h3>
+               <p className="text-sm text-muted-foreground leading-relaxed text-pretty avoid-orphans">
                 {feature.description}
-              </p>
+               </p>
             </div>
           ))}
         </div>

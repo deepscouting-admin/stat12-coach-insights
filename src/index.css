@@ -47,6 +47,10 @@ All colors MUST be HSL.
     /* Tech Neon Effects */
     --neon-glow: 0 0 20px hsl(var(--stat12-teal) / 0.5);
     --neon-border: 1px solid hsl(var(--stat12-teal) / 0.3);
+    
+    /* Text distribution rules */
+    --text-balance: balance;
+    --text-wrap: pretty;
 
     --sidebar-background: 0 0% 98%;
 
@@ -227,6 +231,49 @@ All colors MUST be HSL.
     60% {
       transform: translateY(-4px);
       opacity: 0.9;
+    }
+  }
+
+  /* Text distribution utilities for better responsive typography */
+  .text-balanced {
+    text-wrap: balance;
+    hyphens: auto;
+    word-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+    hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .avoid-orphans {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Prevent short words at line beginning */
+  .avoid-short-lines::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
+
+  /* Responsive text sizing with optimal line distribution */
+  @media (max-width: 640px) {
+    .responsive-text {
+      font-size: clamp(0.875rem, 4vw, 1.125rem);
+      line-height: 1.5;
+      word-spacing: 0.1em;
+    }
+    
+    .responsive-title {
+      font-size: clamp(1.5rem, 8vw, 2.5rem);
+      line-height: 1.2;
+      word-spacing: 0.05em;
     }
   }
 }

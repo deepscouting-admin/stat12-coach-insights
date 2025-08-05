@@ -31,13 +31,13 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-[1.1] tracking-tight whitespace-pre-line drop-shadow-lg">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-[1.1] tracking-tight whitespace-pre-line drop-shadow-lg hyphens-auto break-words">
           {t('heroTitle')}
         </h1>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-primary/90 leading-relaxed drop-shadow-md">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-primary/90 leading-relaxed drop-shadow-md hyphens-auto break-words">
           {t('heroSubtitle')}
         </h2>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-10 text-white/90 max-w-4xl mx-auto leading-relaxed font-light px-4 drop-shadow-md">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-10 text-white/90 max-w-4xl mx-auto leading-relaxed font-light px-4 drop-shadow-md hyphens-auto break-words [word-spacing:0.1em]">
           {t('heroDescription')}
         </p>
         <Button 

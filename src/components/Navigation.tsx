@@ -41,7 +41,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/20 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 px-2 sm:px-3 lg:px-4">
           {/* Logo */}
           <div className="flex items-center">
             <button
@@ -82,7 +82,11 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               onClick={toggleLanguage}
               className="flex items-center space-x-2 px-3 py-2"
             >
-              <span className="text-lg">{language === 'fr' ? '🇫🇷' : '🇬🇧'}</span>
+              <img 
+                src={language === 'fr' ? '/lovable-uploads/97894d8a-7f3d-45d1-90b4-e0737e212032.png' : '/lovable-uploads/f0342362-f432-4450-abca-25166142b18c.png'} 
+                alt={language === 'fr' ? 'Français' : 'English'} 
+                className="w-4 h-4 rounded-full"
+              />
               <span className="text-xs font-medium uppercase">{language}</span>
             </Button>
 
