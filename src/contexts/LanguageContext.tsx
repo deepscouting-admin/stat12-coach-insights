@@ -306,8 +306,18 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   useEffect(() => {
     const browserLang = navigator.language.toLowerCase();
-    const detectedLang: Language = browserLang.startsWith('en') ? 'en' : 'fr';
+    const detectedLang: Language = browserLang.startsWith('fr') ? 'fr' : 'en';
     setLanguage(detectedLang);
+    
+    // Update document metadata based on language
+    const title = "STAT12 - Football Analytics";
+    const description = detectedLang === 'fr' 
+      ? "Stat12 transforme les vidéos de match en données exploitables. Plateforme d'analyse football pour clubs, académies et coachs. Analysez vos matchs avec précision."
+      : "Stat12 turns match videos into actionable data. Football analytics platform for clubs, academies, and coaches. Analyze your matches with precision.";
+    
+    document.title = title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
   }, []);
 
   const t = (key: keyof typeof translations.fr) => {

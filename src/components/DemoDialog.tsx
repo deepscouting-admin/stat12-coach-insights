@@ -19,7 +19,7 @@ interface DemoDialogProps {
 }
 
 export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -58,8 +58,8 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
 
       if (response.ok) {
         toast({
-          title: "Demande envoyée !",
-          description: "Nos équipes reviendront vers vous au plus vite pour programmer votre rendez-vous.",
+          title: t('demoSubmitted'),
+          description: t('demoSubmittedDescription'),
         });
         
         // Réinitialiser le formulaire
@@ -172,13 +172,13 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
           </div>
           
           <div>
-            <Label htmlFor="message">Autres infos</Label>
+            <Label htmlFor="message">{language === 'fr' ? 'Autres infos' : 'Additional info'}</Label>
             <Textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Informations complémentaires (optionnel)"
+              placeholder={language === 'fr' ? 'Informations complémentaires (optionnel)' : 'Additional information (optional)'}
               rows={4}
               disabled={isSubmitting}
             />
@@ -190,7 +190,7 @@ export const DemoDialog = ({ isOpen, onClose }: DemoDialogProps) => {
             size="lg"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Envoi en cours...' : 'Réserver'}
+            {isSubmitting ? (language === 'fr' ? 'Envoi en cours...' : 'Sending...') : (language === 'fr' ? 'Réserver' : 'Book')}
           </Button>
         </form>
       </DialogContent>

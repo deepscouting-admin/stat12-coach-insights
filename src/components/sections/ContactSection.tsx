@@ -9,7 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { DemoDialog } from '@/components/DemoDialog';
 
 const ContactSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,8 +67,8 @@ const ContactSection = () => {
       }
     } catch (error) {
       toast({
-        title: "Erreur",
-        description: "Une erreur s'est produite lors de l'envoi du message.",
+        title: language === 'fr' ? "Erreur" : "Error",
+        description: language === 'fr' ? "Une erreur s'est produite lors de l'envoi du message." : "An error occurred while sending the message.",
         variant: "destructive"
       });
     } finally {
@@ -218,7 +218,7 @@ const ContactSection = () => {
                     disabled={isSubmitting}
                   >
                     <Send className="w-4 h-4 mr-2" />
-                    {isSubmitting ? 'Envoi en cours...' : t('contactSend')}
+                    {isSubmitting ? (language === 'fr' ? 'Envoi en cours...' : 'Sending...') : t('contactSend')}
                   </Button>
                 </form>
               </CardContent>

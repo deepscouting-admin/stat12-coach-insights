@@ -38,11 +38,7 @@ const HeroSection = () => {
           {t('heroSubtitle')}
         </h2>
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-10 text-white/90 max-w-4xl mx-auto leading-relaxed font-light px-4 drop-shadow-md">
-          <span className="block sm:inline">Grâce à notre IA révolutionnaire, nous transformons</span>{' '}
-          <span className="block sm:inline">vos vidéos de match en rapports d'analyse avancée :</span>{' '}
-          <span className="block sm:inline">rapports collectifs, rapports individuels, analyse vidéo</span>{' '}
-          <span className="block sm:inline">simplifiée, statistiques physiques...désormais</span>{' '}
-          <span className="block sm:inline">accessibles à tous</span>
+          {t('heroDescription')}
         </p>
         <Button 
           onClick={() => setIsDemoDialogOpen(true)}

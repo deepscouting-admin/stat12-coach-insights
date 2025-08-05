@@ -41,7 +41,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/20 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="flex items-center">
             <button
@@ -80,9 +80,9 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center space-x-1"
+              className="flex items-center space-x-2 px-3 py-2"
             >
-              <Globe className="w-4 h-4" />
+              <span className="text-lg">{language === 'fr' ? '🇫🇷' : '🇬🇧'}</span>
               <span className="text-xs font-medium uppercase">{language}</span>
             </Button>
 
