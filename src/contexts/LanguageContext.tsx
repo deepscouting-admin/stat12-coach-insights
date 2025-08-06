@@ -164,23 +164,23 @@ const translations = {
     
     // About Section
     aboutTitle: 'Pro-level analysis for all, no barriers',
-    aboutSubtitle: 'Stat12 empowers coaches and squads at every level, who want to harness the power of data and AI to refine their game analysis. Whether you manage a grassroots side or a performance center, we bring elite analysis within reach: No analysts, GPS trackers or tech skills required.\nAll you need is your game video',
+    aboutSubtitle: 'STAT12 empowers coaches and squads at every level, who want to harness the power of data and AI to refine their game analysis. Whether you manage a grassroots side or a performance center, we bring elite analysis within reach: No analysts, GPS trackers or tech skills required.\nAll you need is your game video',
     about1: 'For all clubs: amateur to elite',
-    about1Desc: 'Whether you\'re managing a local side or a professional organization, Stat12 democratizes football data and video analysis. No tech expertise needed: You just need to upload your game videos and access your intuitive reports',
+    about1Desc: 'Whether you\'re managing a local side or a professional organization, STAT12 democratizes football data and video analysis. No tech expertise needed: You just need to upload your game videos and access your intuitive reports',
     about2: 'Designed by coaches, for coaches',
-    about2Desc: 'We worked closely with top-level coaches and educators to build a tool that fits the day-to-day of football staff: focused, intuitive, and actionable.\nStat12 adapts to your workflow, not the other way around.',
+    about2Desc: 'We worked closely with top-level coaches and educators to build a tool that fits the day-to-day of football staff: focused, intuitive, and actionable.\nSTAT12 adapts to your workflow, not the other way around.',
     about3: 'No hardware or trackers needed',
     about3Desc: 'Our AI instantly breaks down every key moment and delivers clear, structured reports: tactical phases, player stat reports, physical stats, simplified video analysis: Everything you need at one place',
     about4: 'Intuitive and easy-to-use platform',
-    about4Desc: 'Stat12 is quick to onboard: Intuitive interface is, on-hand support, and seamless collaboration. Invite your staff and share key insights in just a few clicks.',
+    about4Desc: 'STAT12 is quick to onboard: Intuitive interface is, on-hand support, and seamless collaboration. Invite your staff and share key insights in just a few clicks.',
 
     // Features Section
     featuresTitle: 'Analytics that fuel smarter decisions',
-    featuresSubtitle: 'Move beyond gut feeling and base your decisions on clear, objective insights.\nStat12 helps you refine post-match reviews, track player development, scout opponents, and focus your training with precision.',
+    featuresSubtitle: 'Move beyond gut feeling and base your decisions on clear, objective insights.\nSTAT12 helps you refine post-match reviews, track player development, scout opponents, and focus your training with precision.',
     feature1: 'Team reports',
     feature1Desc: 'Understand your side\'s behaviour across all phases of play: build-up, pressing, transitions, set pieces.\nVisualize tendencies, spot recurring patterns, and uncover areas for collective improvement.',
     feature2: 'Player Reports', 
-    feature2Desc: 'Track every player\'s performance over time with both technical and physical stats.\nPasses, duels, dribbles, distance covered, high-intensity runs... Stat12 allows you to monitor your players progress throughout the season',
+    feature2Desc: 'Track every player\'s performance over time with both technical and physical stats.\nPasses, duels, dribbles, distance covered, high-intensity runs... STAT12 allows you to monitor your players progress throughout the season',
     feature3: 'Opponent analysis',
     feature3Desc: 'Get ahead of your next game with opponent analysis reports. Identify their strengths, weaknesses, and habits to build game plans with confidence',
     feature4: 'Automatic Video Analysis',
@@ -241,8 +241,8 @@ const translations = {
     footerRights: 'STAT12\nPerformance analysis for football: bringing match data to every level of the game.',
     
     // Contact Section
-    contactTitle: 'Need more info or a personal walkthrough?\nOur team is here to answer your questions and guide your Stat12 discovery.',
-    contactDescription: 'Our team is here to answer all your questions and guide you through your Stat12 discovery.',
+    contactTitle: 'Need more info or a personal walkthrough?',
+    contactDescription: 'Our team is here to answer all your questions and guide you through your STAT12 discovery.',
     contactFormTitle: 'Contact us',
     contactDemoTitle: 'Schedule a demonstration',
     contactDemoDescription: 'Discover STAT12 in action with a personalized 30-minute demonstration.',

@@ -40,8 +40,8 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/20 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 px-2 sm:px-3 lg:px-4">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center h-16 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 max-w-screen-2xl mx-auto">
           {/* Logo */}
           <div className="flex items-center">
             <button
@@ -110,7 +110,15 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
               className="fixed inset-0 bg-black/50 z-40" 
               onClick={() => setIsOpen(false)}
             />
-            <div className="py-4 border-t border-border bg-background/95 backdrop-blur-sm absolute left-0 right-0 top-full z-50">
+            <div 
+              className="py-4 border-t border-border bg-background/95 backdrop-blur-sm absolute left-0 right-0 top-full z-50"
+              onClick={(e) => {
+                // Only close if clicking directly on the menu container (below the buttons)
+                if (e.target === e.currentTarget) {
+                  setIsOpen(false);
+                }
+              }}
+            >
               <div className="flex flex-col space-y-2">
                 {sections.map((section) => (
                   <button
