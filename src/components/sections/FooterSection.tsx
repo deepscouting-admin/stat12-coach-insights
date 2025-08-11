@@ -1,7 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const FooterSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-background border-t border-border">
@@ -42,19 +43,28 @@ const FooterSection = () => {
             <h4 className="font-semibold text-foreground mb-4">{t('footerLegalTitle')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="/mentions-legales" className="hover:text-primary transition-colors">
+                <Link 
+                  to={language === 'en' ? '/legal-notice' : '/mentions-legales'} 
+                  className="hover:text-primary transition-colors"
+                >
                   {t('footerLegal')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/politique-confidentialite" className="hover:text-primary transition-colors">
+                <Link 
+                  to={language === 'en' ? '/privacy-policy' : '/politique-de-confidentialite'} 
+                  className="hover:text-primary transition-colors"
+                >
                   {t('footerPrivacy')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/conditions-generales" className="hover:text-primary transition-colors">
+                <Link 
+                  to={language === 'en' ? '/terms-conditions' : '/conditions-generales'} 
+                  className="hover:text-primary transition-colors"
+                >
                   {t('footerTerms')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

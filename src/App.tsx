@@ -23,9 +23,14 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/point-cloud-demo" element={<PointCloudDemo />} />
+            {/* French legal pages */}
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
             <Route path="/conditions-generales" element={<ConditionsGenerales />} />
+            {/* English legal pages */}
+            <Route path="/legal-notice" element={<MentionsLegales />} />
+            <Route path="/privacy-policy" element={<PolitiqueConfidentialite />} />
+            <Route path="/terms-conditions" element={<ConditionsGenerales />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
