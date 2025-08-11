@@ -1,15 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import Navigation from '@/components/Navigation';
+import LegalNavigation from '@/components/LegalNavigation';
 import FooterSection from '@/components/sections/FooterSection';
-import { useState } from 'react';
 
 const ConditionsGenerales = () => {
   const { language } = useLanguage();
-  const [activeSection, setActiveSection] = useState('');
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <LegalNavigation />
       <main className="pt-20 pb-12">
         <div className="container mx-auto px-6 max-w-4xl">
           <h1 className="text-4xl font-bold text-center mb-12 text-foreground">
