@@ -30,7 +30,7 @@ const LegalNavigation = () => {
               to="/"
               className="hover:opacity-80 transition-opacity"
             >
-              <img src="/lovable-uploads/34e9a7f2-95d1-46f3-a0ea-7102aae0dd70.png" alt="STAT12" className="h-9 w-auto" />
+              <img src="./lovable-uploads/34e9a7f2-95d1-46f3-a0ea-7102aae0dd70.png" alt="STAT12" className="h-9 w-auto" />
             </Link>
           </div>
 
@@ -64,7 +64,7 @@ const LegalNavigation = () => {
               className="flex items-center space-x-2 px-3 py-2"
             >
               <img 
-                src={language === 'fr' ? '/lovable-uploads/97894d8a-7f3d-45d1-90b4-e0737e212032.png' : '/lovable-uploads/f0342362-f432-4450-abca-25166142b18c.png'} 
+                src={language === 'fr' ? './lovable-uploads/97894d8a-7f3d-45d1-90b4-e0737e212032.png' : './lovable-uploads/f0342362-f432-4450-abca-25166142b18c.png'} 
                 alt={language === 'fr' ? 'Français' : 'English'} 
                 className="w-4 h-4 rounded-full"
               />
