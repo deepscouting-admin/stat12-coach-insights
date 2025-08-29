@@ -19,7 +19,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/stat12-coach-insights">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/point-cloud-demo" element={<PointCloudDemo />} />
