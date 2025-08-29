@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/stat12-coach-insights/',
+  // Configuration pour GitHub Pages
+  base: mode === 'production' ? '/stat12-coach-insights/' : '/',
   plugins: [
     react(),
     mode === 'development' &&
@@ -20,4 +21,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  }
 }));
