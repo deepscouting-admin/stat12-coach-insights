@@ -32,7 +32,7 @@ const translations = {
 
     // Features Section
     featuresTitle: 'Des analyses data au service de vos décisions',
-    featuresSubtitle: 'Passez au niveau supérieur grâce à des analyses précises, rapides et intuitives, conçues pour booster vos performances collectives et individuelles. Que ce soit pour affiner vos analyses post-match, suivre l\'évolution des performances de vos ou analyser vos adversaires, nos outils s\'adaptent à vos besoins pour vous faire gagner du temps et de l\'efficacité',
+    featuresSubtitle: 'Passez au niveau supérieur grâce à des analyses précises, rapides et intuitives, conçues pour booster vos performances collectives et individuelles. Que ce soit pour affiner vos analyses post-match, suivre l\'évolution de vos performances ou analyser vos adversaires, nos outils s\'adaptent à vos besoins pour vous faire gagner du temps et de l\'efficacité',
     feature1: 'Rapports collectifs',
     feature1Desc: 'Analysez en détail chaque phase du jeu : offensives, défensives, transitions et coups de pied arrêtés. Identifiez les schémas préférentiels de votre équipe, les dynamiques collectives et identifiez précisément les axes d\'amélioration.',
     feature2: 'Rapports individuels', 
