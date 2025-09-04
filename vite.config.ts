@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   // Configuration pour GitHub Pages
-  base: mode === 'production' ? '/stat12-coach-insights/' : '/',
+  base: '/',
   plugins: [
     react(),
     mode === 'development' &&
